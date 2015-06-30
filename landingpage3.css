@@ -1,0 +1,173 @@
+@import url(http://fonts.googleapis.com/css?family=Arvo);
+@import url(http://fonts.googleapis.com/css?family=Rufina);
+@import url(http://fonts.googleapis.com/css?family=Vollkorn);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,600);
+*
+{
+	margin: 0;
+	padding: 0;
+}
+p 
+{
+	font-family: 'Open Sans', sans-serif;
+}
+h1
+{
+	font-family: 'Vollkorn', serif;
+	font-size: 60px;
+	margin-top: 0px;
+}
+h3
+{
+	font-family: 'Open Sans', sans-serif; 
+	font-weight: 600;
+	font-size: 20px;
+}
+img.teamwork
+{
+	width: 100%;
+	display: inline-block;
+}
+
+div#menubar
+{
+	position: fixed;
+	padding: 10px;
+	width: 30%;
+	height: 100%;
+	text-align: center;
+	background-color: rgba(117, 121, 123, 0.9);
+	overflow: auto;
+}
+
+div.category
+{
+	clear: both;
+	padding: 10px;
+	margin-top: 20px;
+}
+div.button
+{
+	position: relative; 
+	padding: 10px;
+	width: 70%;
+	left: 12%;
+	border-radius: 5px;
+	border: 3px;
+	border-style: solid;
+	border-color: rgba(197, 41, 0, 0.5);
+	clear: both; 
+	font-family: 'Open Sans', sans-serif; 
+	font-size: 20px;
+	text-transform: uppercase;
+}
+div.button:hover
+{
+	border-color: rgba(197, 41, 0);
+	background-color: rgba(197, 41, 0, 0.7);
+	cursor: pointer;
+}
+
+div.menubar li
+{
+	list-style: none;
+}
+
+div#menubar address
+{
+	position: absolute;
+	clear: both;
+	bottom: 30px;
+	text-align: center;
+	width: 100%;
+}
+
+div.graphic
+{
+	border-color: rgba(4, 65, 98, 0.5);
+	padding: 10px;
+	margin: 10px;
+	width: 90%;
+	border-style: dashed;
+	border-width: 10px;
+	display: inline-block;
+	margin-top: 25px;
+}
+div.centeredtext
+{
+	padding-left: 10px;
+	padding-right: 10px;
+	display: inline;
+}
+
+div.centeredtext p
+{
+	margin-top: 25px;
+}
+
+/*div.category:hover
+{
+	background-color: rgba(255, 255, 255, 0.1);
+}*/
+
+i
+{
+	color: #c52900;
+	position: relative;
+	/*display: inline-block;*/
+}
+
+/*div.title
+{
+	position: relative;
+	left: 40%;
+	width: 60%;
+	text-align: center;
+	display: inline;
+}*/
+div.content
+{
+	width: 85%;
+	float: right;
+	margin-right: 2%;
+	text-align: center;
+	padding: 15px;
+}
+/* example dialog box*/
+.dialog
+{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	height: 100px;
+	width: 200px;
+	margin-top: -50px;
+	margin-left: -100px;
+	background-color: #ffffff;
+	text-align: center;
+	padding: 10px;
+	border-width: 5px;
+	border-style: dashed;
+	border-color: rgba(4, 65, 98, 0.5)
+
+}
+.dialog:hover
+{
+	cursor: pointer;
+}
+
+#toggle
+{
+	position: fixed;
+	margin-top: 200px;
+	padding: 10px;
+	cursor: pointer;
+	background-color: rgba(117, 121, 123, 0.7);
+	z-index: 10;
+	text-transform: uppercase;
+	text-align: center;
+}
+#toggle2
+{
+	cursor: pointer;
+}
