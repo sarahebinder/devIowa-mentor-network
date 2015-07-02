@@ -155,6 +155,7 @@ div.content
 	border-width: 5px;
 	border-style: dashed;
 	border-color: rgba(4, 65, 98, 0.5)
+	font-family: open sans;
 
 }
 .dialog:hover
