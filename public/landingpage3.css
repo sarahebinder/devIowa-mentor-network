@@ -154,8 +154,9 @@ div.content
 	padding: 10px;
 	border-width: 5px;
 	border-style: dashed;
-	border-color: rgba(4, 65, 98, 0.5)
-	font-family: open sans;
+	border-color: rgba(4, 65, 98, 0.5);
+	font-family: 'open sans' sans-serif;
+	font-size: 20px;
 
 }
 .dialog:hover
