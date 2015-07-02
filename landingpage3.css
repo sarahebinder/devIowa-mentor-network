@@ -2,6 +2,12 @@
 @import url(http://fonts.googleapis.com/css?family=Rufina);
 @import url(http://fonts.googleapis.com/css?family=Vollkorn);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,600);
+/*COLORS IN THIS DOC
+
+
+
+*/
+
 *
 {
 	margin: 0;
@@ -36,7 +42,7 @@ div#menubar
 	width: 30%;
 	height: 100%;
 	text-align: center;
-	background-color: rgba(117, 121, 123, 0.9);
+	background-color: rgba(117, 121, 123, 0.5);
 	overflow: auto;
 }
 
@@ -129,7 +135,7 @@ div.content
 {
 	width: 85%;
 	float: right;
-	margin-right: 2%;
+	margin-right: 4%;
 	text-align: center;
 	padding: 15px;
 }
@@ -162,7 +168,7 @@ div.content
 	margin-top: 200px;
 	padding: 10px;
 	cursor: pointer;
-	background-color: rgba(117, 121, 123, 0.7);
+	background-color: rgba(117, 121, 123, 0.5);
 	z-index: 10;
 	text-transform: uppercase;
 	text-align: center;
