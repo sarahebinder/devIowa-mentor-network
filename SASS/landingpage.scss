@@ -3,8 +3,29 @@
 @import url(http://fonts.googleapis.com/css?family=Vollkorn);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,600);
 
-$orange: #c52900;
+/* Variable declarations */
 $footerHeight: 200px;
+
+/** Skeleton Breakpoints **/
+$break1: 400px;
+$break2: 550px;
+$break3: 750px;
+$break4: 1000px;
+$break5: 1200px;
+
+/* Skeleton overrides */
+.container
+{
+  max-width: 1200px;
+}
+
+/* Color palette */
+$orange: #c52900;
+$yellow: rgba(255,184,0,1)
+$sky: rgba( 12,176,255,1) /* base link color */
+$sky2: rgba(  0, 92,137,1) } /* link hover */
+$sky3: rgba(  0, 71,106,1) } /* link visited */
+
 
 
 *
