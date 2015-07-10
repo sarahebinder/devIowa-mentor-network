@@ -10,8 +10,9 @@ var tpl = swig.compileFile('Views/index.swig');
 app.get('/', function(req, res){
 	console.log(req.query.fullname);
 	res.send(tpl({
-		title:'Page Title',
-		pageTitle:'The Midwest"s premiere startup mentor network'
+		title:'100+ mentors to help grow your ideas',
+		pageTitle:'The Midwest"s premiere startup mentor network', 
+		pageSlug:'Coming soon!'
 	}));
 });
 

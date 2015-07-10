@@ -31,14 +31,20 @@ h5 {
   text-align: center; }
 
 address {
-  font-style: italic; }
+  font-style: italic;
+  text-align: center; }
 
-div#menubar {
-  padding: 10px;
-  min-height: 100%;
-  text-align: center;
-  background-color: rgba(117, 121, 123, 0.5); }
+img {
+  max-width: 100%; }
 
+/* div#menubar
+{
+	padding: 10px;
+	min-height: 100%;
+	text-align: center;
+	background-color: rgba(117, 121, 123, 0.5);
+}
+*/
 div#menubar i {
   color: #ffffff; }
 
@@ -59,7 +65,7 @@ div.page-wrap:after {
   content: "";
   display: block; }
 
-footer div.page-wrap:after {
+footer, div.page-wrap:after {
   height: 200px; }
 
 footer {
