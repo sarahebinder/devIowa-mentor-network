@@ -21,21 +21,21 @@
 	<div id="maincontent"><!--main content container-->
 	  <p><i class="fa fa-thumb-tack"></i> {{ pageSlug }}</p>
 	  <h1>{{ pageTitle }}</h1>
-	  <div id="textbox"><p>{%block content%}{%endblock%}</p></div>
+	  <div><p>{%block content%}{%endblock%}</p></div>
 	  	<form method="get">
 	  	  <h3 align="center">Join the project</h3>
 	  		<div class="row">
-				<div class="four columns">
-					<label for="fullname">Name:</label><input type="text" name="fullname" required autofocus></div>
-					<div class="four columns"><label for="email">Email:</label><input type="email" required></div>
-					<div class="four columns"><label>How do you want to help?</label><select>
+				<div class="six columns">
+					<label for="fullname">Name:</label><input class="u-full-width" type="text" name="fullname" required autofocus></div>
+					<div class="six columns"><label for="email">Email:</label><input class="u-full-width" type="email" required></div>
+					</div>
+					<div><label>How do you want to help?</label><select class="u-full-width" >
 						<option>I want to be a mentor</option>
 						<option>I can help with data collection</option>
 						<option>I have mad JavaScript skills</option>
 						<option>Other</option>
-					</select>
-					</div>
-				</div>	
+						</select>
+					</div>	
 			<label for="message">Message:</label><textarea class="u-full-width" placeholder="Hi, Sarah..."></textarea>
 			<input type="submit" value="go!">
 		</form>
@@ -50,8 +50,9 @@
     			<div class="category"> 
 					<h5>Priority booking</h5>
 					<p>Iowa Startup Accelerator class of 2015</p>
-					<button class="button-primary"><i class="fa fa-rocket fa-2x"></i> book now</button>
 				</div>
+				<button class="button-primary"><i class="fa fa-rocket fa-2x"></i> book now</button>
+
     		</div>
     		<div class="four columns"> 
     			<div class="category">

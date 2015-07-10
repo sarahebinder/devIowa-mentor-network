@@ -4,7 +4,7 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,600);
 
 /* Variable declarations */
-$footerHeight: 200px;
+$footerHeight: 250px;
 
 /** Skeleton Breakpoints **/
 $break1: 400px;
@@ -63,6 +63,7 @@ h3 /*subhead style*/
 {
 	font-family: 'Vollkorn', serif;
 	font-size: 30px;
+	margin-top: 20px;
 	text-align: center;
 }
 
@@ -89,11 +90,11 @@ $a-tags: 'a, a:active, a:hover, a:visited';
 $a-tags-hover: 'a:active, a:hover';
  
 #{$a-tags} {
-  color: red;
+  color: $sky;
   text-decoration: none;
 }
 #{$a-tags-hover} {
-  color: blue;
+  color: $sky2;
 }
 
 /* div#menubar
@@ -105,7 +106,7 @@ $a-tags-hover: 'a:active, a:hover';
 }
 */
 
-div#menubar i
+#menubar i
 {
 	color: #ffffff;
 }
@@ -115,6 +116,7 @@ div.category
 	clear: both;
 	padding: 10px;
 	margin-top: 20px;
+	min-height: 221px;
 }
 
 button.button-primary
@@ -123,7 +125,7 @@ button.button-primary
 	background-color: $sky;
 }
 
-footer button.button-primary:hover
+button.button-primary:hover
 {
 	background-color: $sky2;
 	cursor: pointer;
@@ -152,15 +154,9 @@ footer
 	text-align: center;
 }
 
-button.button-primary i
+footer i
 {
 	color: #ffffff;
-}
-
-#textbox
-{
-	padding-right: 3%;
-	padding-left: 3%;
 }
 
 div.graphic
@@ -174,21 +170,9 @@ div.graphic
 	display: inline-block;
 	margin-top: 25px;
 }
-div.centeredtext
-{
-	padding-left: 10px;
-	padding-right: 10px;
-	display: inline;
-}
-
-div.centeredtext p
-{
-	margin-top: 25px;
-}
 
 i
 {
 	color: $yellow;
 	position: relative;
-	/*display: inline-block;*/
 }

@@ -38,6 +38,7 @@ h2 {
 h3 {
   font-family: 'Vollkorn', serif;
   font-size: 30px;
+  margin-top: 20px;
   text-align: center; }
 
 h5 {
@@ -54,11 +55,11 @@ img {
 
 /* link styling */
 a, a:active, a:hover, a:visited {
-  color: red;
+  color: #0cb0ff;
   text-decoration: none; }
 
 a:active, a:hover {
-  color: blue; }
+  color: #005c89; }
 
 /* div#menubar
 {
@@ -68,43 +69,40 @@ a:active, a:hover {
 	background-color: rgba(117, 121, 123, 0.5);
 }
 */
-div#menubar i {
+#menubar i {
   color: #ffffff; }
 
 div.category {
   clear: both;
   padding: 10px;
-  margin-top: 20px; }
+  margin-top: 20px;
+  min-height: 221px; }
 
 button.button-primary {
   color: #ffffff;
   background-color: #0cb0ff; }
 
-footer button.button-primary:hover {
+button.button-primary:hover {
   background-color: #005c89;
   cursor: pointer; }
 
 div.page-wrap {
   min-height: 100%;
-  margin-bottom: -200px; }
+  margin-bottom: -250px; }
 
 div.page-wrap:after {
   content: "";
   display: block; }
 
 footer, div.page-wrap:after {
-  height: 200px; }
+  height: 250px; }
 
 footer {
   background-color: #dddddd;
   text-align: center; }
 
-button.button-primary i {
+footer i {
   color: #ffffff; }
-
-#textbox {
-  padding-right: 3%;
-  padding-left: 3%; }
 
 div.graphic {
   border-color: #0cb0ff;
@@ -116,17 +114,8 @@ div.graphic {
   display: inline-block;
   margin-top: 25px; }
 
-div.centeredtext {
-  padding-left: 10px;
-  padding-right: 10px;
-  display: inline; }
-
-div.centeredtext p {
-  margin-top: 25px; }
-
 i {
   color: #ffb800;
-  position: relative;
-  /*display: inline-block;*/ }
+  position: relative; }
 
 /*# sourceMappingURL=landingpage4.css.map */
