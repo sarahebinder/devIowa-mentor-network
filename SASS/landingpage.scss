@@ -21,11 +21,10 @@ $break5: 1200px;
 
 /* Color palette */
 $orange: #c52900;
-$yellow: rgba(255,184,0,1)
-$sky: rgba( 12,176,255,1) /* base link color */
-$sky2: rgba(  0, 92,137,1) } /* link hover */
-$sky3: rgba(  0, 71,106,1) } /* link visited */
-
+$yellow: rgba(255,184,0,1);
+$sky: rgba(12,176,255,1); /* base link color */
+$sky2: rgba(0,92,137,1); /* link hover */
+$sky3: rgba(0,71,106,1); /* link visited */
 
 
 *
@@ -39,12 +38,14 @@ html, body
 	height: 100%;
 }
 
+/* text styling */
 p 
 {
 	font-family: 'Open Sans', sans-serif;
 	text-align: center;
 	margin-top: 10px;
 }
+
 h1
 {
 	font-family: 'Vollkorn', serif;
@@ -52,12 +53,19 @@ h1
 	margin-top: 0px;
 	text-align: center; 
 }
+h2
+{
+	font-family: 'Open Sans', sans-serif;
+	text-align: center
+}
+
 h3 /*subhead style*/
 {
 	font-family: 'Vollkorn', serif;
 	font-size: 30px;
 	text-align: center;
 }
+
 h5
 {
 	font-family: 'Open Sans', sans-serif; 
@@ -74,6 +82,18 @@ address
 img
 {
 	max-width: 100%;
+}
+
+/* link styling */
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
+ 
+#{$a-tags} {
+  color: red;
+  text-decoration: none;
+}
+#{$a-tags-hover} {
+  color: blue;
 }
 
 /* div#menubar
@@ -100,7 +120,13 @@ div.category
 button.button-primary
 {
 	color: #ffffff;
-	background-color: $orange;
+	background-color: $sky;
+}
+
+footer button.button-primary:hover
+{
+	background-color: $sky2;
+	cursor: pointer;
 }
 
 div.page-wrap
@@ -139,7 +165,7 @@ button.button-primary i
 
 div.graphic
 {
-	border-color: rgba(4, 65, 98, 0.5);
+	border-color: $sky;
 	padding: 10px;
 	margin: 10px;
 	width: 90%;
@@ -162,7 +188,7 @@ div.centeredtext p
 
 i
 {
-	color: $orange;
+	color: $yellow;
 	position: relative;
 	/*display: inline-block;*/
 }

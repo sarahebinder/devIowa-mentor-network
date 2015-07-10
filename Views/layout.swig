@@ -41,12 +41,11 @@
 		</form>
 	  </div>
     </div>
-   
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<!--<script type="text/javascript" src="MY JS HERE"></script>-->
-  </body>
-   <footer class="footer"><!--footer-->
-    <div class="row" class="container" class="footer">
+
+    <footer class="footer"><!--footer-->
+    <div class="container">
+        <div class="row">
+
     		<div class="four columns">
     			<div class="category"> 
 					<h5>Priority booking</h5>
@@ -58,16 +57,18 @@
     			<div class="category">
 					<h5>Corridor community members</h5>
 					<p>Meet your mentor match</p>
-					<button class="button-primary"><i class="fa fa-bolt fa-2x"></i> open times</button>
 				</div>
+				<button class="button-primary"><i class="fa fa-bolt fa-2x"></i> open times</button>
+
     		</div> <!--is there a way to make the middle column go first in mobile?-->
     		<div class="four columns"> 
     			<div class="category">
     				<h5>Become a mentor</h5>
 					<p>Share your skills</p>
-					<button class="button-primary"><i class="fa fa-plug fa-2x"></i> learn more</button>
 				</div>	
+				<button class="button-primary"><i class="fa fa-plug fa-2x"></i> learn more</button>
     		</div>
+    </div>
     </div>
     <div class="row">
 
@@ -76,4 +77,9 @@
     </div>
 
     </footer>
+   
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<!--<script type="text/javascript" src="MY JS HERE"></script>-->
+  </body>
+   
 </html>
