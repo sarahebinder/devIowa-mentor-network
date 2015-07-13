@@ -97,14 +97,16 @@ $a-tags-hover: 'a:active, a:hover';
   color: $sky2;
 }
 
-/* div#menubar
+div#menubar
 {
 	padding: 10px;
 	min-height: 100%;
 	text-align: center;
 	background-color: rgba(117, 121, 123, 0.5);
+	padding-bottom: 10000px;
+	margin-bottom: -10000px;
 }
-*/
+
 
 #menubar i
 {
@@ -116,13 +118,16 @@ div.category
 	clear: both;
 	padding: 10px;
 	margin-top: 20px;
-	min-height: 221px;
+	text-align:center;
 }
 
 button.button-primary
 {
 	color: #ffffff;
 	background-color: $sky;
+	font-family: 'Open Sans', sans-serif;
+	text-align: center;
+
 }
 
 button.button-primary:hover
@@ -175,4 +180,14 @@ i
 {
 	color: $yellow;
 	position: relative;
+}
+
+div#menu parent
+{
+	overflow: hidden;
+}
+
+div.maincontent
+{
+	width: 90%;
 }

@@ -39,7 +39,7 @@
 
 	</div>
 
-	<div class="eight columns" id="maincontent"><!--main content column-->
+	<div class="eight columns container" id="maincontent"><!--main content column-->
 	  <p><i class="fa fa-thumb-tack"></i>{{ pageSlug }}</p>
 	  <h1 class="container">{{ pageTitle }}</h1>
 	  <div id="textbox" class="container"><p>{%block content%}{%endblock%}</p></div>
