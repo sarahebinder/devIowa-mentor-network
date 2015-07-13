@@ -16,6 +16,20 @@ app.get('/', function(req, res){
 	}));
 });
 
+var thanksTpl = swig.compileFile('Views/thankyou.swig');
+app.get('/thankyou', function(req, res){
+	res.send(thanksTpl({
+		title: 'form submission.',
+		pageTitle: 'You da best.',
+		pageSlug: 'Thanks!',
+		fullName: req.query.fullName, 
+		email: req.query.email,
+		how: req.query.how,
+		message: req.query.message
+
+	}));
+});
+
 app.use(express.static('public'));
 
 app.listen(3000);
