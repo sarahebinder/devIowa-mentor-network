@@ -64,12 +64,41 @@ a:hover {
 a:visited {
   color: #005c89; }
 
-div#menubar {
-  height: 100vh;
-  padding: 10px;
-  text-align: center;
-  background-color: rgba(117, 121, 123, 0.5); }
+/* use media queries to hide the sidebar on small screens */
+@media (min-width: 900px) {
+  div#menubar {
+    position: fixed;
+    overflow: auto;
+    height: 100vh;
+    width: 30%;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(117, 121, 123, 0.5); }
 
+  div#maincontent {
+    width: 60%;
+    position: relative;
+    float: right;
+    padding-right: 3%; }
+
+  div#mobilemenu {
+    visibility: hidden; } }
+@media (max-width: 900px) {
+  div#menubar {
+    visibility: hidden;
+    position: absolute; }
+
+  div#mobilemenu {
+    background-color: rgba(117, 121, 123, 0.7);
+    position: fixed;
+    margin-top: -1%;
+    height: 40px;
+    width: 100vw;
+    text-align: center;
+    z-index: 10; }
+
+  #pageSlug {
+    margin-top: 40px; } }
 #menubar i {
   color: #ffffff; }
 

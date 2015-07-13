@@ -20,7 +20,7 @@
 	  	  <h3 align="center">Join the project</h3>
 	  		<div class="row">
 				<div class="six columns">
-					<label for="fullName">Name:</label><input class="u-full-width" type="text" name="fullName" required autofocus></div>
+					<label for="fullName">Name:</label><input class="u-full-width" type="text" name="fullName" required></div>
 					<div class="six columns"><label for="email">Email:</label><input class="u-full-width" type="email" name="email" required></div>
 					</div>
 					<div><label for="how">How do you want to help?</label><select class="u-full-width" name="how" >
