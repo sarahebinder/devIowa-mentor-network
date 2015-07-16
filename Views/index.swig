@@ -16,7 +16,7 @@
 		<!--<p><em>Contact <a href="mailto:sarah.e.binder@gmail.com" target="blank">sarah.e.binder@gmail.com</a> to contribute data</em></p>-->
 	</div>
 </div>
-<form method="get" action="/thankyou">
+<form method="post" action="/login">
 	  	  <h3 align="center">Join the project</h3>
 	  		<div class="row">
 				<div class="six columns">
