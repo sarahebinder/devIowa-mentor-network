@@ -15,3 +15,18 @@ example@me
 Other
 message here
 Thu Jul 23 2015 16:00:53 GMT-0500 (CDT)
+write to file
+example.email@me
+I have mad JavaScript skills
+test message here
+Thu Jul 23 2015 16:04:28 GMT-0500 (CDT)
+Test McTesterson
+email@example.co
+I want to be a mentor
+One more test for good measure...
+Thu Jul 23 2015 16:09:40 GMT-0500 (CDT)
+One More Test McName
+example@me
+I have mad JavaScript skills
+hello!
+Thu Jul 23 2015 16:44:28 GMT-0500 (CDT)

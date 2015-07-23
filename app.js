@@ -27,7 +27,6 @@ app.use(cs({
 //homepage template
 var tpl = swig.compileFile('Views/index.swig');
 app.get('/', function(req, res){
-	console.log(req.query.fullname);
 	res.send(tpl({
 		title:'100+ mentors to help grow your ideas',
 		pageTitle:'The Midwest\'s premiere startup mentor network', 
@@ -35,7 +34,7 @@ app.get('/', function(req, res){
 	}));
 });
 
-//reads form data and redirects
+//reads form data, writes to file and redirects
 app.post('/login', function(req, res){
 	var visitString = '';
 	if (req.body.fullName)
@@ -44,7 +43,7 @@ app.post('/login', function(req, res){
 		req.sessionsCookie.email = req.body.email;
 		req.sessionsCookie.how = req.body.how;
 		req.sessionsCookie.message = req.body.message;
-		visits.push(req.body.fullName + '\n' + req.body.email + '\n' + req.body.how + '\n' + req.body.message +'\n' + new Date()) + '\n';
+		visits.push(req.body.fullName + '\n' + req.body.email + '\n' + req.body.how + '\n' + req.body.message +'\n' + new Date());
 		console.log(visits);
 		//write this info to a file
 		visitString = visits[visits.length-1];

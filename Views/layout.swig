@@ -15,13 +15,12 @@
 
 
   <body>
-  	<div class="row" id="menu parent">
 	<div id="menubar"> <!--side menu-->
 		<i id="toggle2" class="fa fa-align-justify fa-2x"></i>
 		<div class="category"> 
-				<h5>Pre-approved teams</h5>
-				<p>Iowa Startup Accelerator class of 2015: Priority booking</p>
-				<button class="button-primary"><i class="fa fa-rocket fa-2x"></i> book now</button>
+			<h5>Pre-approved teams</h5>
+			<p>Iowa Startup Accelerator class of 2015: Priority booking</p>
+			<button class="button-primary"><i class="fa fa-rocket fa-2x"></i> book now</button>
 		</div>
 		<div class="category">
 			<h5>Corridor community members</h5>
@@ -34,21 +33,17 @@
 			<button class="button-primary"><i class="fa fa-plug fa-2x"></i> learn more</button>
 		</div>	
 		<address id="byline">made with <i class="fa fa-heart"></i> by @<a href="https://twitter.com/sarahebinder">sarahebinder</a></address>
-
 	</div>
+	
 	<div id="mobilemenu">
 		<button class="button-primary">Book now</button>
 	</div>
 
-  	<div class="page-wrap">
-
 	<div class="container" id="maincontent"><!--main content container-->
-	  <p><i class="fa fa-thumb-tack" id="pageSlug"></i> {{ pageSlug }}</p>
-	  <h1>{{ pageTitle }}</h1>
-	  <div><p>{%block content%}{%endblock%}</p></div>
-	  </div>
-    </div>
-    </div>
+		<p><i class="fa fa-thumb-tack" id="pageSlug"></i> {{ pageSlug }}</p>
+		<h1>{{ pageTitle }}</h1>
+		<div><p>{%block content%}{%endblock%}</p></div>
+	</div>
    
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="controller/menuAnimation.js"></script> <!--is this the right way to do this? When I have multiple js files??-->

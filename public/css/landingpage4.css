@@ -118,24 +118,6 @@ button.button-primary:hover {
   background-color: #005c89;
   cursor: pointer; }
 
-div.page-wrap {
-  min-height: 100%;
-  margin-bottom: -250px; }
-
-div.page-wrap:after {
-  content: "";
-  display: block; }
-
-footer, div.page-wrap:after {
-  height: 250px; }
-
-footer {
-  background-color: #dddddd;
-  text-align: center; }
-
-footer i {
-  color: #ffffff; }
-
 div.graphic {
   border-color: #22a7f0;
   padding: 10px;
@@ -149,8 +131,5 @@ div.graphic {
 i {
   color: #ffb800;
   position: relative; }
-
-div#menu parent {
-  overflow: hidden; }
 
 /*# sourceMappingURL=landingpage4.css.map */

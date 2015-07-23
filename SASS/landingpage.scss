@@ -178,33 +178,6 @@ button.button-primary:hover
 	cursor: pointer;
 }
 
-div.page-wrap
-{
-	min-height: 100%;
-	margin-bottom: -1*$footerHeight;
-}
-
-div.page-wrap:after
-{
-	content: "";
-	display: block;
-}
-
-footer, div.page-wrap:after
-{
-	height: $footerHeight;
-}
-
-footer
-{
-	background-color: #dddddd;
-	text-align: center;
-}
-
-footer i
-{
-	color: #ffffff;
-}
 
 div.graphic
 {
@@ -222,9 +195,4 @@ i
 {
 	color: $yellow;
 	position: relative;
-}
-
-div#menu parent
-{
-	overflow: hidden;
 }
