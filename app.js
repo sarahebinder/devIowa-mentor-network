@@ -12,7 +12,6 @@ var visits = [];
 //starts the node app
 var app = express();
 
-
 //bodyParser to use POST instead of get
 app.use(bodyParser.urlencoded({extended:false}));
 
@@ -34,7 +33,7 @@ app.get('/', function(req, res){
 	}));
 });
 
-//reads form data, writes to file and redirects
+//reads user form data from homepage, writes to file and redirects
 app.post('/login', function(req, res){
 	var visitString = '';
 	if (req.body.fullName)
@@ -74,8 +73,8 @@ app.get('/admin', function(req, res){
 	res.send(adminTpl({
 		title: 'Admin login',
 		pageTitle: 'Log in:',
-	}))
-})
+	}));
+});
 
 app.use(express.static('public'));
 

@@ -72,12 +72,21 @@ h5
 	font-family: 'Open Sans', sans-serif; 
 	font-weight: 600;
 	text-align: center;
+	margin-bottom: 0px; //skeleton override
 }
 
 address
 {
+	font-family: 'Open Sans', sans-serif;
 	font-style: italic;
 	text-align: center;
+	font-size: smaller;
+}
+
+i
+{
+	color: $yellow;
+	position: relative;
 }
 
 img
@@ -169,6 +178,7 @@ button.button-primary
 	background-color: $sky;
 	font-family: 'Open Sans', sans-serif;
 	text-align: center;
+	margin-top: -1.5rem; //skeleton override
 
 }
 
@@ -178,7 +188,12 @@ button.button-primary:hover
 	cursor: pointer;
 }
 
+div.notes
+{
+	margin-top: 3rem;
+}
 
+//placeholder for data viz to come
 div.graphic
 {
 	border-color: $sky;
@@ -189,10 +204,4 @@ div.graphic
 	border-width: 10px;
 	display: inline-block;
 	margin-top: 25px;
-}
-
-i
-{
-	color: $yellow;
-	position: relative;
 }
