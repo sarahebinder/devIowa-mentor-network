@@ -68,6 +68,15 @@ app.get('/thankyou', function(req, res){
 	}));
 });
 
+//admin area
+var adminTpl = swig.compileFile('Views/admin.swig');
+app.get('/admin', function(req, res){
+	res.send(adminTpl({
+		title: 'Admin login',
+		pageTitle: 'Log in:',
+	}))
+})
+
 app.use(express.static('public'));
 
 app.listen(3000);

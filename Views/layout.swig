@@ -33,6 +33,7 @@
 			<button class="button-primary"><i class="fa fa-plug fa-2x"></i> learn more</button>
 		</div>	
 		<address id="byline">made with <i class="fa fa-heart"></i> by @<a href="https://twitter.com/sarahebinder">sarahebinder</a></address>
+		<address><a href="/admin">Login</a></address>
 	</div>
 	
 	<div id="mobilemenu">
