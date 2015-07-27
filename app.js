@@ -69,11 +69,31 @@ app.get('/thankyou', function(req, res){
 
 //admin area
 var adminTpl = swig.compileFile('Views/admin.swig');
-app.get('/admin', function(req, res){
+app.all('/admin', function(req, res){
 	res.send(adminTpl({
 		title: 'Admin login',
 		pageTitle: 'Log in:',
 	}));
+// THIS IS BROKEN
+// validate a password from a file
+var loginInfo = fs.readFileSync('admins.txt', {encoding: 'utf-8'});
+	console.log(loginInfo);
+	var storedPassword = loginInfo.split('pw:');
+	console.log(storedPassword);
+	if (loginInfo)
+	{
+		req.sessionsCookie.password = req.body.password;
+	}
+	if (req.sessionsCookie.password)
+	{
+		req.sessionsCookie.password = storedPassword;
+		console.log('successfully logged in');
+		res.redirect('/')
+	} 
+	else
+	{
+		console.log('incorrect password!');
+	}
 });
 
 app.use(express.static('public'));

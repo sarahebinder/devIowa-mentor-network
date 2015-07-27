@@ -2,7 +2,7 @@
 
 //Adds a pop up to the center of the body
 function buttonClick (ev) {
-	$("body").append('<div class="dialog">Hi! None of these buttons work yet. More soon...</div>');
+	$("body").append('<div class="dialog"><h5>Hi! None of these buttons work yet. More soon...</h5>(click to dismiss)</div>');
 	$(".dialog").on("click", dialogClick);
 }
 
@@ -13,7 +13,7 @@ function dialogClick (ev) {
 
 //"ready" event holder for when the page loads
 $(document).on("ready", function (ev){
-	$(".button").on("click", buttonClick);
+	$(".button-primary").on("click", buttonClick);
 	});
 
 //console log tells us this js has loaded

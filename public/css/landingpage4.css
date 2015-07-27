@@ -129,6 +129,20 @@ button.button-primary:hover {
 div.notes {
   margin-top: 3rem; }
 
+.dialog {
+  position: fixed;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 25%;
+  border-color: #005c89;
+  border-width: 10px;
+  border-style: solid;
+  background-color: #fff;
+  text-align: center; }
+
+.dialog:hover {
+  cursor: pointer; }
+
 div.graphic {
   border-color: #22a7f0;
   padding: 10px;

@@ -193,6 +193,24 @@ div.notes
 	margin-top: 3rem;
 }
 
+.dialog //temporary popup for buttons
+{
+	position: fixed;
+	width: 50%;
+	margin-left: 25%;
+	margin-top: 25%;
+	border-color: $sky2;
+	border-width: 10px;
+	border-style: solid;
+	background-color: #fff;
+	text-align: center;
+}
+
+.dialog:hover
+{
+	cursor: pointer;
+}
+
 //placeholder for data viz to come
 div.graphic
 {
