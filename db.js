@@ -9,8 +9,7 @@ module.exports = db.serialize(function() {
 		"email TEXT NOT NULL" +
 		");");
 	db.run("CREATE TABLE IF NOT EXISTS skills(" +
-		"user_id INTEGER NOT NULL," +
-		"skill_name TEXT NOT NULL," +
-		"FOREIGN KEY (user_id) REFERENCES users(id)" +
+		"id INTEGER PRIMARY KEY," +
+		"skill_name TEXT NOT NULL" +
 		");");
 });

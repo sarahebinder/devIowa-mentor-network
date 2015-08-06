@@ -154,9 +154,11 @@ div#graphic {
   margin-top: 25px; }
 
 .node text {
-  stroke-width: .5px;
+  stroke-width: .7px;
   pointer-events: none;
-  font: 10px sans-serif; }
+  font: 14px;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center; }
 
 line.link {
   stroke: #999;

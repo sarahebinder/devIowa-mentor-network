@@ -20,4 +20,24 @@ module.exports = function (app) {
 			message: req.sessionsCookie.message
 		});
 	});
+
+	//reads user form data from homepage, writes to file and redirects
+app.post('/login', function(req, res){
+	var visitString = '';
+	if (req.body.fullName)
+	{
+		req.sessionsCookie.fullName = req.body.fullName;
+		req.sessionsCookie.email = req.body.email;
+		req.sessionsCookie.how = req.body.how;
+		req.sessionsCookie.message = req.body.message;
+		visits.push(req.body.fullName + '\n' + req.body.email + '\n' + req.body.how + '\n' + req.body.message +'\n' + new Date());
+		console.log(visits);
+		//write this info to a file
+		visitString = visits[visits.length-1];
+			fs.appendFile('visits.txt', visitString + '\n', function(err){
+    		console.log('The visits.txt file was updated');
+  		});
+	}
+	res.redirect('/thankyou');
+});
 }
