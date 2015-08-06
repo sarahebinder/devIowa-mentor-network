@@ -5,6 +5,13 @@ var bodyParser = require('body-parser');
 var cs = require('client-sessions');
 var express = require('express');
 var fs = require('fs');
+var db = require('./db');
+//var templateCommands = require('./controllers/templateCommands');
+var buttons = require('./controllers/buttonPopup');
+var userDisplay = require('./controllers/usersPage');
+
+userDisplay();
+
 
 //store form info
 var visits = [];
@@ -23,15 +30,30 @@ app.use(cs({
 	activeDuration: 60*60*1000,
 }));
 
-//homepage template
+	// //display the users database (as JSON)
+	// app.get("/users", function(req, res){
+	// 	db.all("SELECT * FROM users, skills WHERE users.id = skills.user_id", function (err, rows){
+	// 		if (!err)
+	// 		{	
+	// 			res.json(rows);
+	// 		}
+	// 		else {
+	// 			//on error, send nothing
+	// 			console.log("an error occured getting all users" + err);
+	// 			res.json({"error": err});
+	// 		}
+	// 	});
+	// });
+
+	//homepage template
 var tpl = swig.compileFile('Views/index.swig');
-app.get('/', function(req, res){
-	res.send(tpl({
-		title:'100+ mentors to help grow your ideas',
-		pageTitle:'The Midwest\'s premiere startup mentor network', 
-		pageSlug:'Coming soon!'
-	}));
-});
+	app.get('/', function(req, res){
+		res.send(tpl({
+			title:'100+ mentors to help grow your ideas',
+			pageTitle:'The Midwest\'s premiere startup mentor network', 
+			pageSlug:'Coming soon!'
+		}));
+	});
 
 //reads user form data from homepage, writes to file and redirects
 app.post('/login', function(req, res){
@@ -77,9 +99,10 @@ app.all('/admin', function(req, res){
 // THIS IS BROKEN
 // validate a password from a file
 var loginInfo = fs.readFileSync('admins.txt', {encoding: 'utf-8'});
-	console.log(loginInfo);
-	var storedPassword = loginInfo.split('pw:');
-	console.log(storedPassword);
+	//console.log(loginInfo);
+	var extendedPassword = loginInfo.match(/pw: .*\n/g);
+	var storedPassword = extendedPassword.slice(3);
+	console.log('the stored password is' + storedPassword);
 	if (loginInfo)
 	{
 		req.sessionsCookie.password = req.body.password;
@@ -92,7 +115,7 @@ var loginInfo = fs.readFileSync('admins.txt', {encoding: 'utf-8'});
 	} 
 	else
 	{
-		console.log('incorrect password!');
+		//console.log('incorrect password!');
 	}
 });
 
