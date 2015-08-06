@@ -6,18 +6,19 @@ var cs = require('client-sessions');
 var express = require('express');
 var fs = require('fs');
 var db = require('./db');
-//var templateCommands = require('./controllers/templateCommands');
-var buttons = require('./controllers/buttonPopup');
-var userDisplay = require('./controllers/usersPage');
-
-userDisplay();
-
+var home = require('./controllers/home');
+var userDisplay = require('./controllers/usersPage'); //this is the one that talks to the database
 
 //store form info
 var visits = [];
 
 //starts the node app
 var app = express();
+
+// Adding Swig as a Templating Engine
+app.engine('swig', swig.renderFile);
+app.set('views', './Views');
+app.set('view engine', 'swig');
 
 //bodyParser to use POST instead of get
 app.use(bodyParser.urlencoded({extended:false}));
@@ -46,14 +47,14 @@ app.use(cs({
 	// });
 
 	//homepage template
-var tpl = swig.compileFile('Views/index.swig');
-	app.get('/', function(req, res){
-		res.send(tpl({
-			title:'100+ mentors to help grow your ideas',
-			pageTitle:'The Midwest\'s premiere startup mentor network', 
-			pageSlug:'Coming soon!'
-		}));
-	});
+// var tpl = swig.compileFile('Views/index.swig');
+// 	app.get('/', function(req, res){
+// 		res.send(tpl({
+// 			title:'100+ mentors to help grow your ideas',
+// 			pageTitle:'The Midwest\'s premiere startup mentor network', 
+// 			pageSlug:'Coming soon!'
+// 		}));
+// 	});
 
 //reads user form data from homepage, writes to file and redirects
 app.post('/login', function(req, res){
@@ -76,18 +77,22 @@ app.post('/login', function(req, res){
 });
 
 //Thank you template - on form submission
-var thanksTpl = swig.compileFile('Views/thankyou.swig');
-app.get('/thankyou', function(req, res){
-	res.send(thanksTpl({
-		title: 'form submission.',
-		pageTitle: 'You da best.',
-		pageSlug: 'Thanks!',
-		fullName: req.sessionsCookie.fullName, 
-		email: req.sessionsCookie.email,
-		how: req.sessionsCookie.how,
-		message: req.sessionsCookie.message
-	}));
-});
+// var thanksTpl = swig.compileFile('Views/thankyou.swig');
+// app.get('/thankyou', function(req, res){
+// 	res.send(thanksTpl({
+// 		title: 'form submission.',
+// 		pageTitle: 'You da best.',
+// 		pageSlug: 'Thanks!',
+// 		fullName: req.sessionsCookie.fullName, 
+// 		email: req.sessionsCookie.email,
+// 		how: req.sessionsCookie.how,
+// 		message: req.sessionsCookie.message
+// 	}));
+// });
+
+// app.get('/thankyou', function (req, res){
+// 	res.render('thankyou', {});
+// });
 
 //admin area
 var adminTpl = swig.compileFile('Views/admin.swig');
@@ -118,6 +123,9 @@ var loginInfo = fs.readFileSync('admins.txt', {encoding: 'utf-8'});
 		//console.log('incorrect password!');
 	}
 });
+
+userDisplay(app);
+home(app);
 
 app.use(express.static('public'));
 

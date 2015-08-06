@@ -1,6 +1,8 @@
 //display the users database (as JSON)
+var db = require('../db');
 
-module.exports = function () {
+
+module.exports = function (app) {
 	app.get("/users", function(req, res){
 		db.all("SELECT * FROM users, skills WHERE users.id = skills.user_id", function (err, rows){
 			if (!err)
