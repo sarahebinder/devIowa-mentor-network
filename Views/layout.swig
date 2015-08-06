@@ -17,11 +17,11 @@
 
   <body>
 	<div id="menubar"> <!--side menu-->
-		<div class="category"> 
+		<!--<div class="category"> 
 			<h5>Pre-approved teams</h5>
 			<p>Iowa Startup Accelerator class of 2015: Priority booking</p>
 			<button class="button-primary"><i class="fa fa-rocket fa-2x"></i> book now</button>
-		</div>
+		</div>-->
 		<div class="category">
 			<h5>Corridor community members</h5>
 			<p>Meet your mentor match</p>

@@ -225,6 +225,8 @@ div#graphic
 }
 
 .node text {
+  float: left;
+  clear: both;
   stroke-width: .7px;
   pointer-events: none;
   font: 14px; 
@@ -236,4 +238,9 @@ line.link {
   stroke: #999;
   stroke-opacity: .6;
   stroke-width: 1px;
+}
+
+#graphicchild g {
+	float: inherit;
+	clear: both;
 }
