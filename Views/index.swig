@@ -10,10 +10,11 @@
 		<p><strong>Founders</strong> who have been there, done that will share their experience.</p>
 		<p><strong>Experts</strong> in finance, education, health and more, ready to coach you in some of Iowa's key industries. </p>
 	</div>
-	<div class="graphic">
+	<div id="graphic">
+	<div id="graphicchild">
 		<p><em>Coming soon: Interactive directory of mentors</em></p>
-		<i class="fa fa-cog fa-5x"></i>  <i class="fa fa-cog fa-4x"></i>  <i class="fa fa-cog fa-spin fa-5x"></i>  <i class="fa fa-cog fa-4x"></i> <i class="fa fa-cog fa-5x"></i> 
 		<!--<p><em>Contact <a href="mailto:sarah.e.binder@gmail.com" target="blank">sarah.e.binder@gmail.com</a> to contribute data</em></p>-->
+	</div>
 	</div>
 </div>
 <form method="post" action="/login">

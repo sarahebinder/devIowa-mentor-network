@@ -143,7 +143,7 @@ div.notes {
 .dialog:hover {
   cursor: pointer; }
 
-div.graphic {
+div#graphic {
   border-color: #22a7f0;
   padding: 10px;
   margin: 10px;
@@ -152,5 +152,15 @@ div.graphic {
   border-width: 10px;
   display: inline-block;
   margin-top: 25px; }
+
+.node text {
+  stroke-width: .5px;
+  pointer-events: none;
+  font: 10px sans-serif; }
+
+line.link {
+  stroke: #999;
+  stroke-opacity: .6;
+  stroke-width: 1px; }
 
 /*# sourceMappingURL=landingpage4.css.map */

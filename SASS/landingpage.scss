@@ -212,7 +212,7 @@ div.notes
 }
 
 //placeholder for data viz to come
-div.graphic
+div#graphic
 {
 	border-color: $sky;
 	padding: 10px;
@@ -222,4 +222,16 @@ div.graphic
 	border-width: 10px;
 	display: inline-block;
 	margin-top: 25px;
+}
+
+.node text {
+  stroke-width: .5px;
+  pointer-events: none;
+  font: 10px sans-serif;
+}
+
+line.link {
+  stroke: #999;
+  stroke-opacity: .6;
+  stroke-width: 1px;
 }
