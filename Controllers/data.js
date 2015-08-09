@@ -2,9 +2,9 @@ module.exports = function (app) {
 	//admin login page - this is not working??
 	app.get('/admin', function(req, res){
 		res.render('admin', {
-			title: 'Admin log in',
-			pageTitle: 'Log in:',
-			pageSlug: 'oh you fancy'
+			title: 'data entry',
+			pageTitle: 'ADMIN AREA: Enter data here',
+			pageSlug: 'post that data!'
 		});
 	});
 
