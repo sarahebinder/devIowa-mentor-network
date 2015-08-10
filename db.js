@@ -2,6 +2,8 @@ var sqlite3 = require('sqlite3').verbose();
 
 var db = new sqlite3.Database('data/users.db')
 
+db.run("PRAGMA foreign_keys = ON;");
+
 module.exports = db.serialize(function() {
 	db.run("CREATE TABLE IF NOT EXISTS users(" +
 		"id INTEGER PRIMARY KEY, " +
@@ -17,15 +19,9 @@ module.exports = db.serialize(function() {
 		"skill_name TEXT NOT NULL" +
 		");");
 	db.run("CREATE TABLE IF NOT EXISTS user_skills(" +
-		"users_id INTEGER," +
-		"skills_id INTEGER" + 
+		"user_id INTEGER," + 
+		"skill_id INTEGER," + 
+		"FOREIGN KEY (user_id) REFERENCES users(id)," +
+		"FOREIGN KEY (skill_id) REFERENCES skills(id)" +
 		");");
-	//db.all(
-		//INSERT INTO users (username, email, mentor type, twitter id, linkedin id, image filename) VALUES (req.query.username), (req.query.email), 
-		//etc etc etc
-	//	function(err, rows) {}
-	//	);
-	//db.all(
-		//SELECT * FROM users WHERE users.id = user_skills.users_id;
-	//	);
 });
