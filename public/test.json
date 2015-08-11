@@ -2,8 +2,8 @@
   "nodes":[
     {"name":"Steve", "group":1},
     {"name":"Ben", "group":1},
-    {"name":"Sarah", "group":1},
-    {"name":"Joanne", "group":1},
+    {"name":"Sarah", "group":4},
+    {"name":"Joanne", "group":4},
     {"name":"Ian", "group":1},
     {"name": "Javascript", "group":2}, 
     {"name": "Entrepreneurship", "group":2}, 

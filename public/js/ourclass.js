@@ -38,15 +38,19 @@ d3.json("test.json", function(error, graph) {
 
       .call(force.drag);
 
-  node.append("title")
-      .text(function(d) { return d.name; });
+      node.append("title")
+          .text(function(d) { return d.name; });
 
-  node.append("image")
-      .attr("xlink:href", "https://github.com/favicon.ico") //make a folder called images inside public
-      .attr("x", -8)
-      .attr("y", -8)
-      .attr("width", 16)
-      .attr("height", 16);
+      node.append("circle")
+          .attr("r", 10)
+          .style("fill", function(d) {return color(d.group); })
+
+      node.append("image")
+          .attr("xlink:href", "https://github.com/favicon.ico") //make a folder called images inside public
+          .attr("x", -8)
+          .attr("y", -8)
+          .attr("width", 16)
+          .attr("height", 16);
 
   node.append("text")
       .attr("dx", 12)
