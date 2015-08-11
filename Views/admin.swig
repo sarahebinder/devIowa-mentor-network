@@ -32,29 +32,28 @@
 			<label for="skills" required>Skills:</label>
 			<div class="row">
 			<div class="four columns">
-				<input type="checkbox" name="skills" value="Agile">Agile/scrum<br>
-				<input type="checkbox" name="skills" value="ag">Agriculture and food tech<br>
-				<input type="checkbox" name="skills" value="culture">Culture and HR strategy<br>
-				<input type="checkbox" name="skills" value="customer">Customer discovery<br>
-				<input type="checkbox" name="skills" value="ecommerce">E-Commerce<br>
-				<input type="checkbox" name="skills" value="ed">Education tech<br>
+				<input type="checkbox" name="skills" value="Agile"> Agile/scrum<br>
+				<input type="checkbox" name="skills" value="ag"> Agriculture and food tech<br>
+				<input type="checkbox" name="skills" value="culture"> Culture and HR strategy<br>
+				<input type="checkbox" name="skills" value="customer"> Customer discovery<br>
+				<input type="checkbox" name="skills" value="ecommerce"> E-Commerce<br>
+				<input type="checkbox" name="skills" value="ed"> Education tech<br>
 			</div>
 			<div class="four columns">
-				<input type="checkbox" name="skills" value="finance">Finance and accounting<br>
-				<input type="checkbox" name="skills" value="fintech">Financial tech<br>
-				<input type="checkbox" name="skills" value="green">Green tech<br>
-				<input type="checkbox" name="skills" value="health">Health tech<br>
-				<input type="checkbox" name="skills" value="investor">Investor<br>
-				<input type="checkbox" name="skills" value="legal">Legal and intellectual property<br>
+				<input type="checkbox" name="skills" value="finance"> Finance and accounting<br>
+				<input type="checkbox" name="skills" value="fintech"> Financial tech<br>
+				<input type="checkbox" name="skills" value="green"> Green tech<br>
+				<input type="checkbox" name="skills" value="health"> Health tech<br>
+				<input type="checkbox" name="skills" value="investor"> Investor<br>
+				<input type="checkbox" name="skills" value="legal"> Legal and intellectual property<br>
 			</div>
 			<div class="four columns">
-				<input type="checkbox" name="skills" value="manufacturing">Manufacutring tech<br>
-				<input type="checkbox" name="skills" value="realestate">Real Estate Tech<br>
-				<input type="checkbox" name="skills" value="sales">Sales and marketing<br>
-				<input type="checkbox" name="skills" value="tech">Technology<br>
-				<input type="checkbox" name="skills" value="transportation">Transportation and logistics<br>
-				<input type="checkbox" name="skills" value="ux">UX and 
-				UI<br>
+				<input type="checkbox" name="skills" value="manufacturing"> Manufacutring tech<br>
+				<input type="checkbox" name="skills" value="realestate"> Real Estate Tech<br>
+				<input type="checkbox" name="skills" value="sales"> Sales and marketing<br>
+				<input type="checkbox" name="skills" value="tech"> Technology<br>
+				<input type="checkbox" name="skills" value="transportation"> Transportation and logistics<br>
+				<input type="checkbox" name="skills" value="ux"> UX and UI<br>
 			</div>
 			</div>
 		<div class="row">

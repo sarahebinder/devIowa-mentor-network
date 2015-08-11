@@ -25,15 +25,15 @@
 		<div class="category">
 			<h5>Corridor community members</h5>
 			<p>Meet your mentor match</p>
-			<button class="button-primary"><i class="fa fa-bolt fa-2x"></i> open times</button>
+			<a href="http://www.eventbrite.com/o/jessalyn-holdcraft-iowa-startup-accelerator-8342841936" target="blank"><button class="button-primary"><i class="fa fa-bolt fa-2x"></i> open times</button></a>
 		</div>
 		<div class="category">
 			<h5>Become a mentor</h5>
 			<p>Everyone has a skill to share - learn about mentor expectations</p>
-			<button class="button-primary"><i class="fa fa-plug fa-2x"></i> learn more</button>
+			<a href="http://iowastartup.wpengine.com/accelerator/mentors/mentor-expectations/" target="blank"><button class="button-primary"><i class="fa fa-plug fa-2x"></i> learn more</button></a>
 		</div>	
 		<div class="notes">
-			<address>made with <i class="fa fa-heart"></i> by @<a href="https://twitter.com/sarahebinder">sarahebinder</a></address>
+			<address>made with <i class="fa fa-heart"></i> by @<a href="https://twitter.com/sarahebinder" target="blank">sarahebinder</a></address>
 			<address><a href="/admin">Login</a></address>
 		</div>
 	</div>
@@ -51,7 +51,7 @@
    <!--external js files -->
    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
-   <script type="text/javascript" src="/js/buttons.js"></script>
+   <!--<script type="text/javascript" src="/js/buttons.js"></script>-->
    <script type="text/javascript" src="/js/ourclass.js"></script>
   
   </body>

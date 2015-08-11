@@ -15,7 +15,7 @@ var svg = d3.select("#graphicchild").append("svg")
     .attr("width", width)
     .attr("height", height);
 
-d3.json("test.json", function(error, graph) {
+d3.json("/data", function(error, graph) {
   if (error) throw error;
 
   force
@@ -42,7 +42,7 @@ d3.json("test.json", function(error, graph) {
           .text(function(d) { return d.name; });
 
       node.append("circle")
-          .attr("r", 10)
+          .attr("r", 15)
           .style("fill", function(d) {return color(d.group); })
 
       node.append("image")
@@ -53,7 +53,7 @@ d3.json("test.json", function(error, graph) {
           .attr("height", 16);
 
   node.append("text")
-      .attr("dx", 12)
+      .attr("dx", 18)
       .attr("dy", ".35em")
       .text(function(d) { return d.name });
 

@@ -9,10 +9,10 @@ module.exports = db.serialize(function() {
 		"id INTEGER PRIMARY KEY, " +
 		"username TEXT NOT NULL," + 
 		"email TEXT," +
-		"mentor type TEXT NOT NULL," +
-		"twitter id TEXT," +
-		"linkedin id TEXT," + 
-		"image finlename TEXT" +
+		"mentor_type TEXT NOT NULL," +
+		"twitter_id TEXT," +
+		"linkedin_id TEXT," + 
+		"image_filename TEXT" +
 		");");
 	db.run("CREATE TABLE IF NOT EXISTS skills(" +
 		"id INTEGER PRIMARY KEY," +

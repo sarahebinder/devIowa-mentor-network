@@ -1,3 +1,5 @@
+var db = require('../db');
+
 module.exports = function (app) {
 	//admin login page - this is not working??
 	app.get('/admin', function(req, res){
@@ -6,14 +8,51 @@ module.exports = function (app) {
 			pageTitle: 'ADMIN AREA: Enter data here',
 			pageSlug: 'post that data!'
 		});
-	});
+		console.log(req.query.username + "\n" + req.query.email + "\n" + req.query.mentor_type + "\n" + req.query.skills);
+		//how to show which boxes are checked?
 
+	});
+	//display the database on /data
 	app.get('/data', function(req, res){
-		//query from the database
-		var temp = {something: "something"};
-		//respond with json data
-		res.json(temp);
-	});	
+		db.all('SELECT username, mentor_type FROM users', function(err, rows){
+			//build an object here - keys are mentor types, values are an array
+			//easy way to do grouping without knowing all the info ahead of time
+			var groups = {}; //add an error handler here
+			var ret = {nodes: [], links: []};
+				for (x = 0; x < rows.length; x++)
+				{
+					var row = rows[x]; // we are adding mentors into the appropriate groups
+					if (!groups[row.mentor_type]) groups[row.mentor_type] = (Object.keys(groups).length+1); //if the mentor type doesn't exist, add it
+					
+					//add a node
+					var node = {name: row.username, group: groups[row.mentor_type]};
+					ret['nodes'].push(node);
+				}
+
+					//now get skills
+					var skillsGroup = (Object.keys(groups).length + 1);
+					var sills = {};
+					// we can nest a select inside a select
+					db.all('SELECT skill_name FROM skills', function(err, rows){
+						for (x = 0; x < rows.length; x++)
+						{
+							var node = {name: rows[x].skill_name, skill: true, group: skillsGroup};
+							ret.nodes.push(node);
+						};
+						res.json(ret);
+					});
+
+					console.log(groups);
+					console.log(ret);
+					//display the json on /data
+					res.json(ret);
+		});
+	});
+	
+
+ //    // Example INSERT - THIS IS BROKEN - put it inside of a route callback?
+	// db.run("INSERT INTO users (username, email, mentor type, twitter id, linkedin id, image filename) VALUES (" + req.query.username + ", " + req.query.email + ", " + req.query.mentor_type + ", " + req.query.skills + ", " + req.query.twitter + ", " + req.query.linkedin + ", " + req.query.headshot + ");");
+
 
 // // THIS IS BROKEN
 // // validate a password from a file
