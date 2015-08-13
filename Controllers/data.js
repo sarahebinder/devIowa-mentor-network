@@ -10,7 +10,6 @@ module.exports = function (app) {
 		});
 	});
 
-
 	app.post('/admin', function(req, res){
 		
 		db.serialize(function(){
@@ -18,39 +17,51 @@ module.exports = function (app) {
 			var sqlInsert = 'INSERT INTO users (username, email, mentor_type, bio, twitter_id, linkedin_id, image_filename)';
 			sqlInsert += 'VALUES (?, ?, ?, ?, ?, ?, ?)';
 			db.run(sqlInsert, [req.body.username, req.body.email, req.body.mentor_type, req.body.bio, req.body.twitter_id, req.body.linkedin_id, req.body.image_filename]);
+			
 			//insert SKILLS
 			//query to see if a skill is already in the database
 			var sql = 'INSERT OR IGNORE INTO skills (skill_name)';
 			sql += 'VALUES (?)'
-			db.run(sql, [req.body.skills]);
-			//insert into user_skills
-			db.get('SELECT id FROM users WHERE username = ?', [req.body.username], function(err, uid){
-				db.get('SELECT id FROM skills WHERE skill_name = ?', [req.body.skills], function(err, sid){
-					db.run('INSERT INTO user_skills (user_id, skill_id) VALUES (?, ?)', [uid.id, sid.id]);
-					res.redirect('/admin');
-					console.log (uid.id + "," + sid.id);
+			var stmt = db.prepare(sql);
+			req.body.skills.forEach(function(skill){
+				stmt.run([skill]);
+			});
+			stmt.finalize();
 
+			//forEach to handle the array of skills
+			req.body.skills.forEach(function(skill){
+				createLink(req.body.username, skill);
+			});
+			res.redirect('/admin');
+		});
+	});
+
+	//insert a row in user_skills
+	function createLink(user, skill){
+		db.get('SELECT id FROM users WHERE username = ?', [user], function(err, uid){
+				db.get('SELECT id FROM skills WHERE skill_name = ?', [skill], function(err, sid){
+					db.run('INSERT INTO user_skills (user_id, skill_id) VALUES (?, ?)', [uid.id, sid.id]);
+					console.log (uid.id + "," + sid.id);
 				});
 
 			});
-		}) ;
-	});
+	}
 
+	
+	// // Example SELECT - how do I draw the links??
+	// db.all("SELECT * FROM users, user_skills WHERE users.id = user_skills.user_id;", function(err, rows){
+	// 	console.log(err);
+	// 	if (!err){
 
-	// Example SELECT - how do I draw the links??
-	db.all("SELECT * FROM users, user_skills WHERE users.id = user_skills.user_id;", function(err, rows){
-		console.log(err);
-		if (!err){
-
-	    // Process data
-		var links = {};
-    	//help! 
-    	for (var y = 0; y < rows.length; y++) {
-    		rows[y]
-    	};
-    	}
+	//     // Process data
+	// 	var links = {};
+ //    	//help! 
+ //    	for (var y = 0; y < rows.length; y++) {
+ //    		rows[y]
+ //    	};
+ //    	}
     	
-  	});
+ //  	});
 
 
 	//display the database on /data
@@ -70,7 +81,6 @@ module.exports = function (app) {
 					ret['nodes'].push(node);
 				}
 
-					//now get skills
 					
 					//we can nest a select inside a select
 					db.all('SELECT skill_name FROM skills', function(err, rows){
