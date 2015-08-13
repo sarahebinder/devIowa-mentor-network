@@ -1,7 +1,7 @@
 
 
-var width = 500,
-    height = 500;
+var width = 600,
+    height = 900;
 
 var color = d3.scale.category20();
 

@@ -60,6 +60,14 @@ i {
 img {
   max-width: 100%; }
 
+img#logo {
+  max-width: 100%;
+  min-width: 50%; }
+
+svg {
+  position: relative;
+  left: 25%; }
+
 /* link styling */
 a {
   color: #22a7f0; }

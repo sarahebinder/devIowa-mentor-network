@@ -17,7 +17,7 @@
 
   <body>
 	<div id="menubar"> <!--side menu-->
-		<img src="images/network.png">
+		<a href="/"><img src="images/network.png" id="logo"></a>
 		<div id="tinynodes"></div>
 		<!--<div class="category"> 
 			<h5>Pre-approved teams</h5>
