@@ -2,7 +2,7 @@
 
 {%block content%}
 
-<!--<form method="post">
+<!--<form method="get" action="/admin">
 	<div class="row">
 		<div class="six columns">
 			<label for "username">Username:</label><input class="u-full-width" type="text" name="username" required>
@@ -29,8 +29,9 @@
 				<option>Founder mentor</option>
 				<option>Expert mentor</option>
 			</select>
+			<label for="bio">Brief bio:</label><input class="u-full-width" type="text" name="bio">
 			<label for="skills" required>Skills:</label>
-			<div class="row">
+		<div class="row">
 			<div class="four columns">
 				<input type="checkbox" name="skills" value="Agile"> Agile/scrum<br>
 				<input type="checkbox" name="skills" value="ag"> Agriculture and food tech<br>

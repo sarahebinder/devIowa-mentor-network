@@ -10,6 +10,7 @@ module.exports = db.serialize(function() {
 		"username TEXT NOT NULL," + 
 		"email TEXT," +
 		"mentor_type TEXT NOT NULL," +
+		"bio TEXT," +
 		"twitter_id TEXT," +
 		"linkedin_id TEXT," + 
 		"image_filename TEXT" +

@@ -1,21 +1,23 @@
+var width = 200,
+    height = 200;
 
-
-var width = 500,
-    height = 500;
+// var color = d3.scale.ordinal()
+//     .domain([])
+//     .range(["#FFB800","22A7F0"]);();
 
 var color = d3.scale.category20();
 
 var force = d3.layout.force()
-    .charge(-500)
+    .charge(-50)
    // .linkDistance(30)
     .linkStrength(0.2)
     .size([width, height]);
 
-var svg = d3.select("#graphicchild").append("svg")
+var svg = d3.select("#tinynodes").append("svg")
     .attr("width", width)
     .attr("height", height);
 
-d3.json("test.json", function(error, graph) {
+d3.json("tinynodes.json", function(error, graph) {
   if (error) throw error;
 
   force
@@ -31,31 +33,16 @@ d3.json("test.json", function(error, graph) {
 
   var node = svg.selectAll(".node")
       .data(graph.nodes)
-    .enter().append("g")
+    .enter().append("circle")
       .attr("class", "node")
-      //.attr("r", 5)
+      .attr("r", 5)
       .style("fill", function(d) { return color(d.group); })
 
       .call(force.drag);
 
-      node.append("title")
-          .text(function(d) { return d.name; });
-
       node.append("circle")
           .attr("r", 15)
           .style("fill", function(d) {return color(d.group); })
-
-      node.append("image")
-          .attr("xlink:href", "https://github.com/favicon.ico") //make a folder called images inside public
-          .attr("x", -8)
-          .attr("y", -8)
-          .attr("width", 16)
-          .attr("height", 16);
-
-  node.append("text")
-      .attr("dx", 18)
-      .attr("dy", ".35em")
-      .text(function(d) { return d.name });
 
   force.on("tick", function() {
     link.attr("x1", function(d) { return d.source.x; })
@@ -69,5 +56,3 @@ d3.json("test.json", function(error, graph) {
 //        .attr("dy", function(d) { return d.y; });
   });
 });
-
-

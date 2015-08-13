@@ -1,14 +1,19 @@
 var db = require('../db');
 
 module.exports = function (app) {
-	//admin login page - this is not working??
+	//admin login page 
 	app.get('/admin', function(req, res){
 		res.render('admin', {
 			title: 'data entry',
 			pageTitle: 'ADMIN AREA: Enter data here',
 			pageSlug: 'post that data!'
 		});
-		console.log(req.query.username + "\n" + req.query.email + "\n" + req.query.mentor_type + "\n" + req.query.skills);
+		//console log the input
+		//console.log(req.query.username + "\n" + req.query.email + "\n" + req.query.mentor_type + "\n" + req.query.skills);
+		//Is this the right place to put the INSERT?
+		var sqlInsert = 'INSERT INTO users (username, email, mentor_type, bio, twitter_id, linkedin_id, image_filename)';
+			sqlInsert += 'VALUES (?, ?, ?, ?, ?, ?, ?)';
+			db.run("sqlInsert, req.query.username, req.query.email, req.query.mentor_type, req.query.bio, req.query.twitter_id, req.query.linkedin_id, req.query.image_filename")
 
 	});
 	//display the database on /data
@@ -30,18 +35,18 @@ module.exports = function (app) {
 
 					//now get skills
 					
-					// we can nest a select inside a select
-					// db.all('SELECT skill_name FROM skills', function(err, rows){
-					// 	var skillsGroup = (Object.keys(groups).length + 1);
-					// 	var sills = {};	
+					//we can nest a select inside a select
+					db.all('SELECT skill_name FROM skills', function(err, rows){
+						var skillsGroup = (Object.keys(groups).length + 1);
+						var sills = {};	
 
-					// 	for (x = 0; x < rows.length; x++)
-					// 	{
-					// 		var node = {name: rows[x].skill_name, skill: true, group: skillsGroup};
-					// 		ret.nodes.push(node);
-					// 	};
-					// 	res.json(ret);
-					// });
+						for (x = 0; x < rows.length; x++)
+						{
+							var node = {name: rows[x].skill_name, skill: true, group: skillsGroup};
+							ret.nodes.push(node);
+						};
+						res.json(ret);
+					});
 
 					console.log(groups);
 					console.log(ret);
@@ -49,33 +54,4 @@ module.exports = function (app) {
 					res.json(ret);
 		});
 	});
-	
-
- //    // Example INSERT - THIS IS BROKEN - put it inside of a route callback?
-	// db.run("INSERT INTO users (username, email, mentor type, twitter id, linkedin id, image filename) VALUES (" + req.query.username + ", " + req.query.email + ", " + req.query.mentor_type + ", " + req.query.skills + ", " + req.query.twitter + ", " + req.query.linkedin + ", " + req.query.headshot + ");");
-
-
-// // THIS IS BROKEN
-// // validate a password from a file
-// var loginInfo = fs.readFileSync('admins.txt', {encoding: 'utf-8'});
-// 	//console.log(loginInfo);
-// 	var extendedPassword = loginInfo.match(/pw: .*\n/g);
-// 	var storedPassword = extendedPassword.slice(3);
-// 	console.log('the stored password is' + storedPassword);
-// 	if (loginInfo)
-// 	{
-// 		req.sessionsCookie.password = req.body.password;
-// 	}
-// 	if (req.sessionsCookie.password)
-// 	{
-// 		req.sessionsCookie.password = storedPassword;
-// 		console.log('successfully logged in');
-// 		res.redirect('/')
-// 	} 
-// 	else
-// 	{
-// 		//console.log('incorrect password!');
-// 	}
-// });
-	
-}
+}	

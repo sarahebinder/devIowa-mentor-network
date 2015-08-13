@@ -15,7 +15,7 @@ var svg = d3.select("#graphicchild").append("svg")
     .attr("width", width)
     .attr("height", height);
 
-d3.json("test.json", function(error, graph) {
+d3.json("/data", function(error, graph) {
   if (error) throw error;
 
   force

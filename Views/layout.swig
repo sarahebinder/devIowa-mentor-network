@@ -18,6 +18,7 @@
   <body>
 	<div id="menubar"> <!--side menu-->
 		<img src="images/network.png">
+		<div id="tinynodes"></div>
 		<!--<div class="category"> 
 			<h5>Pre-approved teams</h5>
 			<p>Iowa Startup Accelerator class of 2015: Priority booking</p>
@@ -65,7 +66,8 @@
    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
    <!--<script type="text/javascript" src="/js/buttons.js"></script>-->
-   <script type="text/javascript" src="/js/ourclass.js"></script>
+ 	<script type="text/javascript" src="/js/dataviz.js"></script>
+    <!--<script type="text/javascript" src="/js/tinynodes.js"></script>-->
   
   </body>
    
