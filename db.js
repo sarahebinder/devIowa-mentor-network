@@ -17,7 +17,7 @@ module.exports = db.serialize(function() {
 		");");
 	db.run("CREATE TABLE IF NOT EXISTS skills(" +
 		"id INTEGER PRIMARY KEY," +
-		"skill_name TEXT NOT NULL" +
+		"skill_name TEXT NOT NULL UNIQUE" +
 		");");
 	db.run("CREATE TABLE IF NOT EXISTS user_skills(" +
 		"user_id INTEGER," + 

@@ -12,25 +12,30 @@ module.exports = function (app) {
 
 
 	app.post('/admin', function(req, res){
-		//INSERT new user data from form into the users.db
-		var sqlInsert = 'INSERT INTO users (username, email, mentor_type, bio, twitter_id, linkedin_id, image_filename)';
-		sqlInsert += 'VALUES (?, ?, ?, ?, ?, ?, ?)';
-		db.run(sqlInsert, req.body.username, req.body.email, req.body.mentor_type, req.body.bio, req.body.twitter_id, req.body.linkedin_id, req.body.image_filename);
-		res.redirect('/admin');
-
-		//insert SKILLS
-		//query to see if a skill is already in the database
-
-		db.get("SELECT * FROM skills WHERE skill_name = " + req.body.skills, function(err, data) {
-			if (data); 
-			else{
-				var sql = 'INSERT INTO skills (skill_name)';
-				sql += 'VALUES (?)'
-				db.run(sql, req.body.skills);
-			};
-		}) ;
 		
+		db.serialize(function(){
+			//INSERT new user data from form into the users.db
+			var sqlInsert = 'INSERT INTO users (username, email, mentor_type, bio, twitter_id, linkedin_id, image_filename)';
+			sqlInsert += 'VALUES (?, ?, ?, ?, ?, ?, ?)';
+			db.run(sqlInsert, [req.body.username, req.body.email, req.body.mentor_type, req.body.bio, req.body.twitter_id, req.body.linkedin_id, req.body.image_filename]);
+			//insert SKILLS
+			//query to see if a skill is already in the database
+			var sql = 'INSERT OR IGNORE INTO skills (skill_name)';
+			sql += 'VALUES (?)'
+			db.run(sql, [req.body.skills]);
+			//insert into user_skills
+			db.get('SELECT id FROM users WHERE username = ?', [req.body.username], function(err, uid){
+				db.get('SELECT id FROM skills WHERE skill_name = ?', [req.body.skills], function(err, sid){
+					db.run('INSERT INTO user_skills (user_id, skill_id) VALUES (?, ?)', [uid.id, sid.id]);
+					res.redirect('/admin');
+					console.log (uid.id + "," + sid.id);
+
+				});
+
+			});
+		}) ;
 	});
+
 
 	// Example SELECT - how do I draw the links??
 	db.all("SELECT * FROM users, user_skills WHERE users.id = user_skills.user_id;", function(err, rows){
