@@ -49,44 +49,47 @@ module.exports = function (app) {
 
 	//display the database on /data
 	app.get('/data', function(req, res){
-		db.all('SELECT username, mentor_type FROM users', function(err, rows){
+		db.all('SELECT id, username, mentor_type FROM users', function(err, rows){
 			//build an object here - keys are mentor types, values are an array
 			//easy way to do grouping without knowing all the info ahead of time
 			var groups = {}; //add an error handler here
 			var ret = {nodes: [], links: []};
+			var umap = {}, smap = {};
+			for (x = 0; x < rows.length; x++)
+			{
+				var row = rows[x]; // we are adding mentors into the appropriate groups
+				if (!groups[row.mentor_type]) groups[row.mentor_type] = (Object.keys(groups).length+1); //if the mentor type doesn't exist, add it
+				
+				//add a node
+				var node = {name: row.username, group: groups[row.mentor_type]};
+				umap[row.id] = ret.nodes.length;
+				ret['nodes'].push(node);
+			}
+			//we can nest a select inside a select
+			//add a node for a new skill
+			db.all('SELECT id, skill_name FROM skills', function(err, rows){
+				var skillsGroup = (Object.keys(groups).length + 1);
+				var skills = {};	
+
 				for (x = 0; x < rows.length; x++)
 				{
-					var row = rows[x]; // we are adding mentors into the appropriate groups
-					if (!groups[row.mentor_type]) groups[row.mentor_type] = (Object.keys(groups).length+1); //if the mentor type doesn't exist, add it
+					var node = {name: rows[x].skill_name, skill: true, group: skillsGroup};
+					smap[rows[x].id] = ret.nodes.length;
+					ret.nodes.push(node);
+				};
+
+				//add a link???
+				db.all('SELECT user_skills.user_id AS uid, user_skills.skill_id AS sid FROM users, skills, user_skills WHERE users.id = user_skills.user_id AND skills.id = user_skills.skill_id', function(err, rows){ //in db.all, you have an error and an array of objects
+					console.log(umap);
+					console.log(smap);
+					rows.forEach(function(row){
+						var obj = {"source": umap[row.uid], "target": smap[row.sid]};
+						ret['links'].push(obj);
+					});
+					res.json(ret);
 					
-					//add a node
-					var node = {name: row.username, group: groups[row.mentor_type]};
-					ret['nodes'].push(node);
-
-					//add a link???
-					db.all('SELECT user_skills.user_id AS uid, user_skills.skill_id AS sid FROM users, skills, user_skills WHERE users.id = user_skills.user_id AND skills.id = user_skills.skill_id', function(err, rows){ //in db.all, you have an error and an array of objects
-						rows.forEach(function(row){
-							var obj = {"source": row.uid, "target": row.sid};
-							ret['links'].push(obj);
-						});
-
-						
-					});
-				}
-					//we can nest a select inside a select
-					//add a node for a new skill
-					db.all('SELECT skill_name FROM skills', function(err, rows){
-						var skillsGroup = (Object.keys(groups).length + 1);
-						var skills = {};	
-
-						for (x = 0; x < rows.length; x++)
-						{
-							var node = {name: rows[x].skill_name, skill: true, group: skillsGroup};
-							ret.nodes.push(node);
-						};
-						res.json(ret);
-					});
-
+				});								
+			});
 		});
 	});
 }	
