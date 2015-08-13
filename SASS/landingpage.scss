@@ -103,7 +103,6 @@ img#logo
 svg
 {
 	position: relative;
-	left: 25%;
 }
 
 /* link styling */
@@ -264,6 +263,10 @@ line.link {
   stroke: #999;
   stroke-opacity: .6;
   stroke-width: 1px;
+}
+#graphicchild
+{
+	text-align: center;
 }
 
 #graphicchild g {

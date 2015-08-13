@@ -1,7 +1,7 @@
 
 
-var width = 600,
-    height = 900;
+var width = 800,
+    height = 800;
 
 var color = d3.scale.category20();
 
@@ -42,11 +42,15 @@ d3.json("/data", function(error, graph) {
           .text(function(d) { return d.name; });
 
       node.append("circle")
-          .attr("r", 15)
+          .attr("r", function(d) { 
+            return (d.skill) ? 5 : 15;
+          })
           .style("fill", function(d) {return color(d.group); })
 
       node.append("image")
-          .attr("xlink:href", "https://github.com/favicon.ico") //make a folder called images inside public
+          .attr("xlink:href", function(d) { 
+            return (d.skill) ? "" : "https://github.com/favicon.ico";
+          }) //make a folder called images inside public
           .attr("x", -8)
           .attr("y", -8)
           .attr("width", 16)

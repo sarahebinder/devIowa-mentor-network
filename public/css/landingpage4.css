@@ -65,8 +65,7 @@ img#logo {
   min-width: 50%; }
 
 svg {
-  position: relative;
-  left: 25%; }
+  position: relative; }
 
 /* link styling */
 a {
@@ -184,6 +183,9 @@ line.link {
   stroke: #999;
   stroke-opacity: .6;
   stroke-width: 1px; }
+
+#graphicchild {
+  text-align: center; }
 
 #graphicchild g {
   float: inherit;
