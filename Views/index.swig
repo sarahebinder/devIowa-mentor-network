@@ -1,7 +1,7 @@
 {% extends 'layout.swig' %}
 
 {%block content%}
-<div>	
+<div class="row">	
 	<img src="images/teamwork.jpg" alt="startupstockphotos">
 	<address>Teamwork makes the dream work. (<a href="http://startupstockphotos.com/" target="blank">startupstockphotos.com</a>)</address>
 	<div>

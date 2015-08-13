@@ -118,14 +118,18 @@ a:visited
 		position: fixed;
 		overflow: auto;
 		height: 100vh;
-		width: 30%;
+		width: 20%;
 		padding: 10px;
 		text-align: center;
-		background-color: rgba(117, 121, 123, 0.5);
+		//background-color: rgba(117, 121, 123, 0.5);
+		border-color: $sky;
+		border-style: dashed;
+		border-left: 5px;
+		border-top: 0px;
 	}	
 	div#maincontent
 	{
-		width: 60%;
+		width: 70%;
 		position: relative; 
 		float: right;
 		padding-right: 3%; 
@@ -159,17 +163,26 @@ a:visited
 }
 
 
-#menubar i
+.button-primary i
 {
 	color: #ffffff;
 }
 
 div.category
 {
-	clear: both;
 	padding: 10px;
 	margin-top: 20px;
 	text-align:center;
+	border-color: $sky;
+	border-style: dashed;
+	border-top: 5px;
+	border-left: 0px;
+	border-right: 0px;
+}
+
+button:hover
+{
+	background-color: #ccc;
 }
 
 button.button-primary
@@ -192,6 +205,7 @@ div.notes
 {
 	margin-top: 3rem;
 }
+
 
 .dialog //temporary popup for buttons
 {
@@ -243,4 +257,12 @@ line.link {
 #graphicchild g {
 	float: inherit;
 	clear: both;
+}
+
+.footer
+{
+	border-color: $sky;
+	border-style: dashed;
+	border-bottom: 5px;
+	background-color: #ddd;
 }

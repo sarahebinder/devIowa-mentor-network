@@ -9,7 +9,6 @@ module.exports = function (app) {
 			pageSlug: 'post that data!'
 		});
 		console.log(req.query.username + "\n" + req.query.email + "\n" + req.query.mentor_type + "\n" + req.query.skills);
-		//how to show which boxes are checked?
 
 	});
 	//display the database on /data
@@ -30,17 +29,19 @@ module.exports = function (app) {
 				}
 
 					//now get skills
-					var skillsGroup = (Object.keys(groups).length + 1);
-					var sills = {};
+					
 					// we can nest a select inside a select
-					db.all('SELECT skill_name FROM skills', function(err, rows){
-						for (x = 0; x < rows.length; x++)
-						{
-							var node = {name: rows[x].skill_name, skill: true, group: skillsGroup};
-							ret.nodes.push(node);
-						};
-						res.json(ret);
-					});
+					// db.all('SELECT skill_name FROM skills', function(err, rows){
+					// 	var skillsGroup = (Object.keys(groups).length + 1);
+					// 	var sills = {};	
+
+					// 	for (x = 0; x < rows.length; x++)
+					// 	{
+					// 		var node = {name: rows[x].skill_name, skill: true, group: skillsGroup};
+					// 		ret.nodes.push(node);
+					// 	};
+					// 	res.json(ret);
+					// });
 
 					console.log(groups);
 					console.log(ret);

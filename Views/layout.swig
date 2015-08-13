@@ -17,19 +17,18 @@
 
   <body>
 	<div id="menubar"> <!--side menu-->
+		<img src="images/network.png">
 		<!--<div class="category"> 
 			<h5>Pre-approved teams</h5>
 			<p>Iowa Startup Accelerator class of 2015: Priority booking</p>
 			<button class="button-primary"><i class="fa fa-rocket fa-2x"></i> book now</button>
 		</div>-->
 		<div class="category">
-			<h5>Corridor community members</h5>
-			<p>Meet your mentor match</p>
+			<p><strong>Corridor community members: </strong>Meet your mentor match</p>
 			<a href="http://www.eventbrite.com/o/jessalyn-holdcraft-iowa-startup-accelerator-8342841936" target="blank"><button class="button-primary"><i class="fa fa-bolt fa-2x"></i> open times</button></a>
 		</div>
 		<div class="category">
-			<h5>Become a mentor</h5>
-			<p>Everyone has a skill to share - learn about mentor expectations</p>
+			<p><strong>Become a mentor: </strong>Everyone has a skill to share </p>
 			<a href="http://iowastartup.wpengine.com/accelerator/mentors/mentor-expectations/" target="blank"><button class="button-primary"><i class="fa fa-plug fa-2x"></i> learn more</button></a>
 		</div>	
 		<div class="notes">
@@ -47,6 +46,20 @@
 		<h1>{{ pageTitle }}</h1>
 		<div><p>{%block content%}{%endblock%}</p></div>
 	</div>
+	<!--<div class="footer">
+		<div class="row">
+			<div class="four columns category">
+				<p><strong>Founders: </strong>Meet your mentor match</p> <a href="http://www.eventbrite.com/o/jessalyn-holdcraft-iowa-startup-accelerator-8342841936" target="blank"><button><i class="fa fa-bolt fa-2x"></i> open times</button></a>
+			</div>
+			<div class="four columns category">
+				<p><strong>Become a mentor: </strong>Everyone has a skill to share</p><a href="http://iowastartup.wpengine.com/accelerator/mentors/mentor-expectations/" target="blank"><button><i class="fa fa-plug fa-2x"></i> learn more</button></a>
+			</div>
+			<div class="four columns category">
+				<strong>A popup for the form will go here</strong>
+			</div>
+		</div>
+		<div class="note"><address>made with <i class="fa fa-heart"></i> by @<a href="https://twitter.com/sarahebinder" target="blank">sarahebinder</a></address></div>
+	</div>-->
    
    <!--external js files -->
    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
