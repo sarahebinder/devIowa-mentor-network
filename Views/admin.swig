@@ -15,7 +15,7 @@
 			<input type="submit" value="login">
 		</div>
 	</form>-->
-	<form method="get">
+	<form method="post">
 	<div class="row">
 		<div class="six columns">
 			<label for="username">Mentor's name:</label><input class="u-full-width" type="text" name="username" required>

@@ -8,14 +8,31 @@ module.exports = function (app) {
 			pageTitle: 'ADMIN AREA: Enter data here',
 			pageSlug: 'post that data!'
 		});
-		//console log the input
-		//console.log(req.query.username + "\n" + req.query.email + "\n" + req.query.mentor_type + "\n" + req.query.skills);
+	});
+	app.post('/admin', function(req, res){
 		//Is this the right place to put the INSERT?
 		var sqlInsert = 'INSERT INTO users (username, email, mentor_type, bio, twitter_id, linkedin_id, image_filename)';
-			sqlInsert += 'VALUES (?, ?, ?, ?, ?, ?, ?)';
-			db.run("sqlInsert, req.query.username, req.query.email, req.query.mentor_type, req.query.bio, req.query.twitter_id, req.query.linkedin_id, req.query.image_filename")
-
+		sqlInsert += 'VALUES (?, ?, ?, ?, ?, ?, ?)';
+		db.run(sqlInsert, req.body.username, req.body.email, req.body.mentor_type, req.body.bio, req.body.twitter_id, req.body.linkedin_id, req.body.image_filename);
+		res.redirect('/admin');
 	});
+
+	// Example SELECT - how do I draw the links??
+	db.all("SELECT * FROM users, user_skills WHERE users.id = user_skills.user_id;", function(err, rows){
+		console.log(err);
+		if (!err){
+
+	    // Process data
+		var links = {};
+    	//help! 
+    	for (var y = 0; y < rows.length; y++) {
+    		rows[y]
+    	};
+    	}
+    	
+  	});
+
+
 	//display the database on /data
 	app.get('/data', function(req, res){
 		db.all('SELECT username, mentor_type FROM users', function(err, rows){
@@ -47,11 +64,6 @@ module.exports = function (app) {
 						};
 						res.json(ret);
 					});
-
-					console.log(groups);
-					console.log(ret);
-					//display the json on /data
-					res.json(ret);
 		});
 	});
 }	
