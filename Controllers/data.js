@@ -9,12 +9,27 @@ module.exports = function (app) {
 			pageSlug: 'post that data!'
 		});
 	});
+
+
 	app.post('/admin', function(req, res){
-		//Is this the right place to put the INSERT?
+		//INSERT new user data from form into the users.db
 		var sqlInsert = 'INSERT INTO users (username, email, mentor_type, bio, twitter_id, linkedin_id, image_filename)';
 		sqlInsert += 'VALUES (?, ?, ?, ?, ?, ?, ?)';
 		db.run(sqlInsert, req.body.username, req.body.email, req.body.mentor_type, req.body.bio, req.body.twitter_id, req.body.linkedin_id, req.body.image_filename);
 		res.redirect('/admin');
+
+		//insert SKILLS
+		//query to see if a skill is already in the database
+
+		db.get("SELECT * FROM skills WHERE skill_name = " + req.body.skills, function(err, data) {
+			if (data); 
+			else{
+				var sql = 'INSERT INTO skills (skill_name)';
+				sql += 'VALUES (?)'
+				db.run(sql, req.body.skills);
+			};
+		}) ;
+		
 	});
 
 	// Example SELECT - how do I draw the links??
@@ -55,7 +70,7 @@ module.exports = function (app) {
 					//we can nest a select inside a select
 					db.all('SELECT skill_name FROM skills', function(err, rows){
 						var skillsGroup = (Object.keys(groups).length + 1);
-						var sills = {};	
+						var skills = {};	
 
 						for (x = 0; x < rows.length; x++)
 						{
