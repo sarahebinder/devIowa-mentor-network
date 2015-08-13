@@ -33,28 +33,28 @@
 			<label for="skills" required>Skills:</label>
 		<div class="row">
 			<div class="four columns">
-				<input type="checkbox" name="skills" value="Agile"> Agile/scrum<br>
-				<input type="checkbox" name="skills" value="ag"> Agriculture and food tech<br>
-				<input type="checkbox" name="skills" value="culture"> Culture and HR strategy<br>
-				<input type="checkbox" name="skills" value="customer"> Customer discovery<br>
-				<input type="checkbox" name="skills" value="ecommerce"> E-Commerce<br>
-				<input type="checkbox" name="skills" value="ed"> Education tech<br>
+				<input type="checkbox" name="skills" value="Agile and scrum"> Agile/scrum<br>
+				<input type="checkbox" name="skills" value="Agriculture and food tech"> Agriculture and food tech<br>
+				<input type="checkbox" name="skills" value="Culture and HR strategy"> Culture and HR strategy<br>
+				<input type="checkbox" name="skills" value="Customer discovery"> Customer discovery<br>
+				<input type="checkbox" name="skills" value="E-commerce"> E-Commerce<br>
+				<input type="checkbox" name="skills" value="Education tech"> Education tech<br>
+			</div>
+			<div class="four columns"> 
+				<input type="checkbox" name="skills" value="Finance and accounting"> Finance and accounting<br>
+				<input type="checkbox" name="skills" value="Financial tech"> Financial tech<br>
+				<input type="checkbox" name="skills" value="Green tech"> Green tech<br>
+				<input type="checkbox" name="skills" value="Health tech"> Health tech<br>
+				<input type="checkbox" name="skills" value="Investor"> Investor<br>
+				<input type="checkbox" name="skills" value="Legal and intellectual property"> Legal and intellectual property<br>
 			</div>
 			<div class="four columns">
-				<input type="checkbox" name="skills" value="finance"> Finance and accounting<br>
-				<input type="checkbox" name="skills" value="fintech"> Financial tech<br>
-				<input type="checkbox" name="skills" value="green"> Green tech<br>
-				<input type="checkbox" name="skills" value="health"> Health tech<br>
-				<input type="checkbox" name="skills" value="investor"> Investor<br>
-				<input type="checkbox" name="skills" value="legal"> Legal and intellectual property<br>
-			</div>
-			<div class="four columns">
-				<input type="checkbox" name="skills" value="manufacturing"> Manufacutring tech<br>
-				<input type="checkbox" name="skills" value="realestate"> Real Estate Tech<br>
-				<input type="checkbox" name="skills" value="sales"> Sales and marketing<br>
-				<input type="checkbox" name="skills" value="tech"> Technology<br>
-				<input type="checkbox" name="skills" value="transportation"> Transportation and logistics<br>
-				<input type="checkbox" name="skills" value="ux"> UX and UI<br>
+				<input type="checkbox" name="skills" value="Manufacturing tech"> Manufacutring tech<br>
+				<input type="checkbox" name="skills" value="Real Estate tech"> Real Estate Tech<br>
+				<input type="checkbox" name="skills" value="Sales and marketing"> Sales and marketing<br>
+				<input type="checkbox" name="skills" value="Technology"> Technology<br>
+				<input type="checkbox" name="skills" value="Transportation and logistics"> Transportation and logistics<br>
+				<input type="checkbox" name="skills" value="UX and UI"> UX and UI<br>
 			</div>
 			</div>
 		<div class="row">
