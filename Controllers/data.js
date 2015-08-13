@@ -47,23 +47,6 @@ module.exports = function (app) {
 			});
 	}
 
-	
-	// // Example SELECT - how do I draw the links??
-	// db.all("SELECT * FROM users, user_skills WHERE users.id = user_skills.user_id;", function(err, rows){
-	// 	console.log(err);
-	// 	if (!err){
-
-	//     // Process data
-	// 	var links = {};
- //    	//help! 
- //    	for (var y = 0; y < rows.length; y++) {
- //    		rows[y]
- //    	};
- //    	}
-    	
- //  	});
-
-
 	//display the database on /data
 	app.get('/data', function(req, res){
 		db.all('SELECT username, mentor_type FROM users', function(err, rows){
@@ -79,10 +62,19 @@ module.exports = function (app) {
 					//add a node
 					var node = {name: row.username, group: groups[row.mentor_type]};
 					ret['nodes'].push(node);
-				}
 
-					
+					//add a link???
+					db.all('SELECT user_skills.user_id AS uid, user_skills.skill_id AS sid FROM users, skills, user_skills WHERE users.id = user_skills.user_id AND skills.id = user_skills.skill_id', function(err, rows){ //in db.all, you have an error and an array of objects
+						rows.forEach(function(row){
+							var obj = {"source": row.uid, "target": row.sid};
+							ret['links'].push(obj);
+						});
+
+						
+					});
+				}
 					//we can nest a select inside a select
+					//add a node for a new skill
 					db.all('SELECT skill_name FROM skills', function(err, rows){
 						var skillsGroup = (Object.keys(groups).length + 1);
 						var skills = {};	
@@ -94,6 +86,7 @@ module.exports = function (app) {
 						};
 						res.json(ret);
 					});
+
 		});
 	});
 }	
