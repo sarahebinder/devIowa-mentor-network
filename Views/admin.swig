@@ -33,6 +33,7 @@
 			<label for="skills" required>Skills:</label>
 		<div class="row">
 			<div class="four columns">
+				<address>NOTE: Each mentor must have at least two skills</address>
 				<input type="checkbox" name="skills" value="Agile and scrum"> Agile/scrum<br>
 				<input type="checkbox" name="skills" value="Agriculture and food tech"> Agriculture and food tech<br>
 				<input type="checkbox" name="skills" value="Culture and HR strategy"> Culture and HR strategy<br>
