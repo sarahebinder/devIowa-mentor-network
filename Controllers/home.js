@@ -4,8 +4,8 @@ module.exports = function (app) {
 	app.get('/', function(req, res){
 		res.render('index', {
 			title:'100+ mentors to help grow your ideas',
-			pageTitle:'The Midwest\'s premiere startup mentor network', 
-			pageSlug:'Coming soon!'
+			pageTitle:'A network of founders, mentors and experts, visualized', 
+			pageSlug:'Meet your match'
 		});
 	});
 
