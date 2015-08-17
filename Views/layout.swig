@@ -34,10 +34,11 @@
 		</div>	
 		<div class="category">
 			<p><strong>Join the project: </strong>Make this page more awesome</p>
-			<a href="/join"><button class="button-primary" id="formPopup"><i class="fa fa-plug fa-2x"></i> learn more</button></a>
+			<a href="/join"><button class="button-primary" id="formPopup"><i class="fa fa-link fa-2x"></i> connect</button></a>
 		</div>	
 		<div class="notes">
 			<address>made with <i class="fa fa-heart"></i> by @<a href="https://twitter.com/sarahebinder" target="blank">sarahebinder</a></address>
+			<address>Dev/Iowa Summer Series 2015</address>
 			<address><a href="/admin">Login</a></address>
 		</div>
 	</div>
