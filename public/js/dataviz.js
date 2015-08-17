@@ -3,13 +3,19 @@
 var width = 800,
     height = 800;
 
-var color = d3.scale.category20();
+var color = d3.scale.ordinal().range(["#F91776", "#FFB800", "#FF8B00", "#22A8F0"]);
+
+var m = 20 //number of clusters
 
 var force = d3.layout.force()
-    .charge(-500)
-   // .linkDistance(30)
+      .charge(-300)
+    //.charge(function(d){return (d.skill) ? "10" : "-30"; })
+    //.linkDistance(30)
+    //.chargeDistance(300)
+    //.gravity(function(d){return (d.skill) ? "0.9" : "0.1"})
     .linkStrength(0.01)
-    .size([width, height]);
+    .size([width, height])
+    //.friction(0.7); //closer to 0, nodes move slower/less
 
 var svg = d3.select("#graphicchild").append("svg")
     .attr("width", width)
@@ -36,6 +42,7 @@ d3.json("/data", function(error, graph) {
       //.attr("r", 5)
       .style("fill", function(d) { return color(d.group); })
 
+
       .call(force.drag);
 
       node.append("title")
@@ -43,18 +50,18 @@ d3.json("/data", function(error, graph) {
 
       node.append("circle")
           .attr("r", function(d) { 
-            return (d.skill) ? 5 : 15;
+            return (d.skill) ? 5 : 15; //if a skill, radius 5, if not, radius 15
           })
           .style("fill", function(d) {return color(d.group); })
 
-      node.append("image")
-          .attr("xlink:href", function(d) { 
-            return (d.skill) ? "" : "https://github.com/favicon.ico";
+      node.append("image") //adding images is a WIP
+          .attr("xlink:source", function(d) { 
+            return (d.skill) ? "" : function(d){return d.image; }; //if a skill, no image, if not, add the icon
           }) //make a folder called images inside public
           .attr("x", -8)
           .attr("y", -8)
-          .attr("width", 16)
-          .attr("height", 16);
+          .attr("width", 24)
+          .attr("height", 24);
 
   node.append("text")
       .attr("dx", 18)

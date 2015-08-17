@@ -28,6 +28,3 @@ function dialogClick (ev) {
 $(document).on("ready", function (ev){
 	$("#mobileButton").on("click", buttonClick);
 	});
-
-//console log tells us this js has loaded
-console.log('temporary js animations ready');

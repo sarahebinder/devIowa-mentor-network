@@ -279,6 +279,10 @@ div#graphic
 	margin-top: 25px;
 }
 
+.node:hover {
+	cursor: pointer;
+}
+
 .node text {
   float: left;
   clear: both;
@@ -287,6 +291,7 @@ div#graphic
   font: 14px; 
   font-family: 'Open Sans', sans-serif;
   text-align: center;
+  stroke: #999;  
 }
 
 line.link {
