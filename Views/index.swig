@@ -10,28 +10,10 @@
 		<p><strong>Founders</strong> who have been there, done that will share their experience.</p>
 		<p><strong>Experts</strong> in finance, education, health and more, ready to coach you in some of Iowa's key industries. </p>
 	</div>
-	<div id="graphic">
-	<div id="graphicchild">
-		<p><em>Note: this much awesomeness is best viewed on large screens</em></p>
-		<!--<p><em>Contact <a href="mailto:sarah.e.binder@gmail.com" target="blank">sarah.e.binder@gmail.com</a> to contribute data</em></p>-->
-	</div>
+	<div id="graphic"><!--the D3 graph goes here!-->
+		<address>Note: this much awesomeness is best viewed on large screens</address>
+		<div id="graphicchild">
+		</div>
 	</div>
 </div>
-<!---<form method="post" action="/login">
-	  	  <h3 align="center">Join the project</h3>
-	  		<div class="row">
-				<div class="six columns">
-					<label for="fullName">Name:</label><input class="u-full-width" type="text" name="fullName" required></div>
-				<div class="six columns"><label for="email">Email:</label><input class="u-full-width" type="email" name="email" required></div>
-			</div>
-				<div><label for="how">How do you want to help?</label><select class="u-full-width" name="how" >
-					<option>I want to be a mentor</option>
-					<option>I can help with data collection</option>
-					<option>I have mad JavaScript skills</option>
-					<option>Other</option>
-					</select>
-				</div>	
-			<label for="message">Message:</label><textarea class="u-full-width" placeholder="Hi, Sarah..." name="message"></textarea>
-			<input type="submit" value="go!">
-		</form>-->
 {%endblock%}	
