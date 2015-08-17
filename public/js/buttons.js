@@ -13,7 +13,7 @@ function dialogClick (ev) {
 
 //"ready" event holder for when the page loads
 $(document).on("ready", function (ev){
-	$(".button-primary").on("click", buttonClick);
+	$("#mobileButton").on("click", buttonClick);
 	});
 
 //console log tells us this js has loaded

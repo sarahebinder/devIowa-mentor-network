@@ -12,12 +12,12 @@
 	</div>
 	<div id="graphic">
 	<div id="graphicchild">
-		<p><em>Coming soon: Interactive directory of mentors</em></p>
+		<p><em>Note: this much awesomeness is best viewed on large screens</em></p>
 		<!--<p><em>Contact <a href="mailto:sarah.e.binder@gmail.com" target="blank">sarah.e.binder@gmail.com</a> to contribute data</em></p>-->
 	</div>
 	</div>
 </div>
-<form method="post" action="/login">
+<!---<form method="post" action="/login">
 	  	  <h3 align="center">Join the project</h3>
 	  		<div class="row">
 				<div class="six columns">
@@ -33,5 +33,5 @@
 				</div>	
 			<label for="message">Message:</label><textarea class="u-full-width" placeholder="Hi, Sarah..." name="message"></textarea>
 			<input type="submit" value="go!">
-		</form>
+		</form>-->
 {%endblock%}	

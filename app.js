@@ -10,9 +10,6 @@ var home = require('./controllers/home');
 var userDisplay = require('./controllers/usersPage'); //this is the one that talks to the database
 var dataController = require('./controllers/data');
 
-//store form info
-var visits = [];
-
 //starts the node app
 var app = express();
 

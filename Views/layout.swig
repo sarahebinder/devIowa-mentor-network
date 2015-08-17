@@ -32,6 +32,10 @@
 			<p><strong>Become a mentor: </strong>Everyone has a skill to share </p>
 			<a href="http://iowastartup.wpengine.com/accelerator/mentors/mentor-expectations/" target="blank"><button class="button-primary"><i class="fa fa-plug fa-2x"></i> learn more</button></a>
 		</div>	
+		<div class="category">
+			<p><strong>Join the project: </strong>Make this page more awesome</p>
+			<a href="/join"><button class="button-primary" id="formPopup"><i class="fa fa-plug fa-2x"></i> learn more</button></a>
+		</div>	
 		<div class="notes">
 			<address>made with <i class="fa fa-heart"></i> by @<a href="https://twitter.com/sarahebinder" target="blank">sarahebinder</a></address>
 			<address><a href="/admin">Login</a></address>
@@ -39,7 +43,7 @@
 	</div>
 	
 	<div id="mobilemenu">
-		<button class="button-primary">Book now</button>
+		<button class="button-primary" id="mobileButton">Book now</button>
 	</div>
 
 	<div class="container" id="maincontent"><!--main content container-->
@@ -65,7 +69,7 @@
    <!--external js files -->
    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
-   <!--<script type="text/javascript" src="/js/buttons.js"></script>-->
+   <script type="text/javascript" src="/js/buttons.js"></script>
  	<script type="text/javascript" src="/js/dataviz.js"></script>
     <!--<script type="text/javascript" src="/js/tinynodes.js"></script>-->
   
