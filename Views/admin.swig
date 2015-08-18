@@ -35,7 +35,7 @@
 		<div class="row">
 			<div class="four columns">
 				<input type="checkbox" name="skills" value="Agile and scrum"> Agile/scrum<br>
-				<input type="checkbox" name="skills" value="Agriculture and food tech"> Agriculture and food tech<br>
+				<input type="checkbox" name="skills" value="Agriculture tech"> Agriculture and food tech<br>
 				<input type="checkbox" name="skills" value="Culture and HR strategy"> Culture and HR strategy<br>
 				<input type="checkbox" name="skills" value="Customer discovery"> Customer discovery<br>
 				<input type="checkbox" name="skills" value="E-commerce"> E-Commerce<br>

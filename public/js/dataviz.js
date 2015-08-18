@@ -1,18 +1,18 @@
 
 
-var width = 800,
-    height = 800;
+var width = 900,
+    height = 900;
 
 var color = d3.scale.ordinal().range(["#B20B1F", "#FFB800", "#FF8B00", "#001195"]);
 
 var m = 20 //number of clusters
 
 var force = d3.layout.force()
-      .charge(-300)
+      .charge(-400)
     //.charge(function(d){return (d.skill) ? "10" : "-30"; })
     //.linkDistance(30)
     //.chargeDistance(300)
-    //.gravity(function(d){return (d.skill) ? "0.9" : "0.1"})
+    .gravity(0.07)
     .linkStrength(0.01)
     .size([width, height])
     //.friction(0.7); //closer to 0, nodes move slower/less
@@ -64,8 +64,9 @@ d3.json("/data", function(error, graph) {
           .attr("height", 24);
 
       node.append("text")
-          .attr("dx", 18)
-          .attr("dy", ".35em")
+          .attr("dy", function(d){
+            return (d.angle > 3.14159) ? "-1em" : "1em"; }) //adjust the position of the label based on where the skill node is
+          .attr("text-anchor", "middle")
           .text(function(d) { return d.name });
 
   force.on("tick", function() {
