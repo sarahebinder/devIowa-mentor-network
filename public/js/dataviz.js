@@ -3,7 +3,7 @@
 var width = 800,
     height = 800;
 
-var color = d3.scale.ordinal().range(["#F91776", "#FFB800", "#FF8B00", "#22A8F0"]);
+var color = d3.scale.ordinal().range(["#B20B1F", "#FFB800", "#FF8B00", "#001195"]);
 
 var m = 20 //number of clusters
 
@@ -63,10 +63,10 @@ d3.json("/data", function(error, graph) {
           .attr("width", 24)
           .attr("height", 24);
 
-  node.append("text")
-      .attr("dx", 18)
-      .attr("dy", ".35em")
-      .text(function(d) { return d.name });
+      node.append("text")
+          .attr("dx", 18)
+          .attr("dy", ".35em")
+          .text(function(d) { return d.name });
 
   force.on("tick", function() {
     link.attr("x1", function(d) { return d.source.x; })
