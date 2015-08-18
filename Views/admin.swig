@@ -68,8 +68,8 @@
 		</div>
 		<label for "headshot">Mentor photo:</label><input type="file" name="img"><br>
 		<input type="submit" class="button-primary" value="go!">
+		<a href="/"><button>Just kidding, go back home</button></a>
+
 	</div>
 	</form>
-	<a href="/"><button>Just kidding, go back home</button></a>
-
 {%endblock%}

@@ -16,6 +16,6 @@
 			</div>	
 		<label for="message">Message:</label><textarea class="u-full-width" placeholder="Hi, Sarah..." name="message"></textarea>
 		<input type="submit" class="button-primary" value="go!">
+		<a href="/"><button>Just kidding, go back home...</button></a>
 	</form>
-	<a href="/"><button>Just kidding, go back home...</button></a>
 {%endblock%}

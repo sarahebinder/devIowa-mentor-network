@@ -33,7 +33,7 @@
 		<div class="notes">
 			<address>made with <i class="fa fa-heart"></i> by @<a href="https://twitter.com/sarahebinder" target="blank">sarahebinder</a></address>
 			<address>Dev/Iowa Summer Series 2015</address>
-			<address><a href="/admin">Login</a></address>
+			<address><a href="/login">Login</a></address>
 		</div>
 	</div>
 	<div id="mobilemenu">

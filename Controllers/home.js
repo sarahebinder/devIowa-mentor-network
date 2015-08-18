@@ -31,7 +31,7 @@ module.exports = function (app) {
 	});
 
 	//reads user form data from homepage, writes to file and redirects
-	app.post('/login', function(req, res){
+	app.post('/userlogin', function(req, res){
 		var visits = [];
 		var visitString = '';
 		if (req.body.fullName)

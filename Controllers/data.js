@@ -1,8 +1,13 @@
 var db = require('../db');
+var fs = require('fs');
 
 module.exports = function (app) {
 	//admin login page 
 	app.get('/admin', function(req, res){
+		if(!req.sessionsCookie.loggedIn){
+			res.redirect('/');
+			return;
+		}
 		res.render('admin', {
 			title: 'data entry',
 			pageTitle: 'ADMIN AREA: Enter data here',
@@ -10,8 +15,27 @@ module.exports = function (app) {
 		});
 	});
 
+	var userData; //create a login to access the data entry/admin area
+	  userData = JSON.parse(fs.readFileSync('./data/admins.json'));
+
+	  app.get('/login', function (req, res) {
+	    res.render('login', {});
+	  });
+
+	  app.post('/login', function (req, res) {
+	   if(req.body.username==userData.admins.username && req.body.password==userData.admins.password)
+	    {
+	      req.sessionsCookie.loggedIn = true;
+	      res.redirect('/admin');
+	    } else 
+	      res.redirect('/login');
+	  });
+
 	app.post('/admin', function(req, res){
-		
+		if(!req.sessionsCookie.loggedIn){
+			res.redirect('/');
+			return;
+		}
 		//Serialize so functions will execute in the order written
 		db.serialize(function(){
 			//INSERT new user data from form into the users.db
