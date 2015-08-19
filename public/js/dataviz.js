@@ -50,16 +50,16 @@ d3.json("/data", function(error, graph) {
 
       node.append("circle")
           .attr("r", function(d) { 
-            return (d.skill) ? 5 : 15; //if a skill, radius 5, if not, radius 15
+            return (d.skill) ? 5 : 10; //if a skill, radius 5, if not, radius 15
           })
           .style("fill", function(d) {return color(d.group); })
 
       node.append("image") //adding images is a WIP
-          .attr("xlink:href", function(d) { 
-            return (d.skill) ? "" : "https://github.com/favicon.ico"; //if a skill, no image, if not, add the icon
-          }) //make a folder called images inside public
-          .attr("x", -8)
-          .attr("y", -8)
+          // .attr("xlink:href", function(d) { 
+          //   return (d.skill) ? "" : "https://github.com/favicon.ico"; //if a skill, no image, if not, add the icon
+          // }) //make a folder called images inside public
+          .attr("x", -12)
+          .attr("y", -20)
           .attr("width", 24)
           .attr("height", 24);
 
@@ -72,7 +72,7 @@ d3.json("/data", function(error, graph) {
       node.on("click", function(d){
         console.log(d)
         if (!d.skill){
-          $("#mentorinfo").append('<div id="mentorbox"> <h3>' + d.name + '</h3><p>' + d.bio + '</p><p> @' + d.twitter_id + '</p><p>' + d.email + '</p></div>') //note: need to hide undefined fields
+          $("#mentorinfo").append('<div id="mentorbox"><img src="https://github.com/favicon.ico" style="align:center, padding-top: 10px"><h3>' + d.name + '</h3><p>' + d.bio + '</p><p>' + d.email + '</p></div>') //note: need to hide undefined fields
           }
       });
 

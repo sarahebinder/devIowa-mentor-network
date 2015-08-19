@@ -191,7 +191,7 @@ div#graphic {
 .node text {
   float: left;
   clear: both;
-  stroke-width: .7px;
+  stroke-width: 1px;
   pointer-events: none;
   font: 14px;
   font-family: 'Open Sans', sans-serif;
@@ -200,7 +200,7 @@ div#graphic {
 
 line.link {
   stroke: #999;
-  stroke-opacity: .6;
+  stroke-opacity: .5;
   stroke-width: 1px; }
 
 #graphicchild {
