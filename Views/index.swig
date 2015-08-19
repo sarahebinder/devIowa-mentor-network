@@ -12,7 +12,10 @@
 	</div>
 	<div id="graphic"><!--the D3 graph goes here!-->
 		<address>Note: this much awesomeness is best viewed on large screens</address>
-		<div id="graphicchild">
+		<address>(Try clicking a mentor for more info)</address>
+		<div id="graphicchild" class="eight columns">
+		</div>
+		<div id="mentorinfo" class="three columns">
 		</div>
 	</div>
 </div>

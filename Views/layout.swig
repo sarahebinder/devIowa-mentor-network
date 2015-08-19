@@ -50,7 +50,6 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 <script type="text/javascript" src="/js/buttons.js"></script>
-<script type="text/javascript" src="/js/nodeclick.js"></script>
 <script type="text/javascript" src="/js/dataviz.js"></script>
 <!--<script type="text/javascript" src="/js/tinynodes.js"></script>-->
   

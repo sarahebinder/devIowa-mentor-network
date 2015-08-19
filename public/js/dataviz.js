@@ -1,7 +1,7 @@
 
 
-var width = 900,
-    height = 900;
+var width = 800,
+    height = 800;
 
 var color = d3.scale.ordinal().range(["#B20B1F", "#FFB800", "#FF8B00", "#001195"]);
 
@@ -55,8 +55,8 @@ d3.json("/data", function(error, graph) {
           .style("fill", function(d) {return color(d.group); })
 
       node.append("image") //adding images is a WIP
-          .attr("xlink:source", function(d) { 
-            return (d.skill) ? "" : function(d){return d.image; }; //if a skill, no image, if not, add the icon
+          .attr("xlink:href", function(d) { 
+            return (d.skill) ? "" : "https://github.com/favicon.ico"; //if a skill, no image, if not, add the icon
           }) //make a folder called images inside public
           .attr("x", -8)
           .attr("y", -8)
@@ -69,6 +69,13 @@ d3.json("/data", function(error, graph) {
           .attr("text-anchor", "middle")
           .text(function(d) { return d.name });
 
+      node.on("click", function(d){
+        console.log(d)
+        if (!d.skill){
+          $("#mentorinfo").append('<div id="mentorbox"> <h3>' + d.name + '</h3><p>' + d.bio + '</p><p> @' + d.twitter_id + '</p><p>' + d.email + '</p></div>') //note: need to hide undefined fields
+          }
+      });
+
   force.on("tick", function() {
     link.attr("x1", function(d) { return d.source.x; })
         .attr("y1", function(d) { return d.source.y; })
@@ -77,8 +84,6 @@ d3.json("/data", function(error, graph) {
 
     node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
 
-//    node.attr("dx", function(d) { return d.x; })
-//        .attr("dy", function(d) { return d.y; });
   });
 });
 

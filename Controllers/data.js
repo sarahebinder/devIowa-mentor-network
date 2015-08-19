@@ -74,7 +74,7 @@ module.exports = function (app) {
 
 	//display the database on /data
 	app.get('/data', function(req, res){
-		db.all('SELECT id, username, mentor_type FROM users', function(err, rows){
+		db.all('SELECT * FROM users', function(err, rows){
 			//Sort the mentors into groups based on their mentor_type
 			//easy way to do grouping without knowing all the info ahead of time
 			var groups = {}; //add an error handler here
@@ -86,7 +86,8 @@ module.exports = function (app) {
 				if (!groups[row.mentor_type]) groups[row.mentor_type] = (Object.keys(groups).length+1); //if the mentor type doesn't exist, add it
 				
 				//add a node
-				var node = {name: row.username, group: groups[row.mentor_type]};
+				var node = {name: row.username, group: groups[row.mentor_type], image: row.image_filename, email: row.email, bio: row.bio, twitter: row.twitter_id, linkedin: row.linkedin_id};
+				console.log(node);
 				umap[row.id] = ret.nodes.length;
 				ret['nodes'].push(node);
 			}
@@ -101,8 +102,8 @@ module.exports = function (app) {
 
 				for (x = 0; x < rows.length; x++)
 				{
-					var nx = 450+(radius*Math.cos(angle*x)); //set the x position - using 450 as the center because our graph is currently 900 by 900
-					var ny = 450+((1.5*radius)*Math.sin(angle*x)); //set the y position
+					var nx = 400+(radius*Math.cos(angle*x)); //set the x position - using 450 as the center because our graph is currently 900 by 900
+					var ny = 400+((1.2*radius)*Math.sin(angle*x)); //set the y position
 					var node = {name: rows[x].skill_name, skill: true, group: skillsGroup, x: nx, y: ny, fixed: true, angle: (angle*x)};
 					smap[rows[x].id] = ret.nodes.length;
 					ret.nodes.push(node);

@@ -301,10 +301,10 @@ line.link {
 }
 #graphicchild
 {
-	text-align: center;
+	/* text-align: center;
 	border-color: $sky;
 	border-style: dashed;
-	border-width: 5px;
+	border-width: 5px; */
 }
 
 #graphicchild g {
@@ -318,4 +318,15 @@ line.link {
 	border-style: dashed;
 	border-bottom: 5px;
 	background-color: #ddd;
+}
+
+#mentorbox
+{
+	border-color: $sky2;
+	border-style: solid;
+	border-width: 3px;
+	position: absolute;
+	min-height: 200px;
+	width: 200px;
+	background-color: #fff;
 }
