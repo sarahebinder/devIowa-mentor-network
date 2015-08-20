@@ -8,11 +8,11 @@ var color = d3.scale.ordinal().range(["#B20B1F", "#FFB800", "#FF8B00", "#001195"
 var m = 20 //number of clusters
 
 var force = d3.layout.force()
-      .charge(-400)
+      .charge(-500)
     //.charge(function(d){return (d.skill) ? "10" : "-30"; })
     //.linkDistance(30)
     //.chargeDistance(300)
-    .gravity(0.07)
+    .gravity(0.6)
     .linkStrength(0.01)
     .size([width, height])
     //.friction(0.7); //closer to 0, nodes move slower/less

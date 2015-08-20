@@ -98,12 +98,12 @@ module.exports = function (app) {
 				var skills = {};	
 
 				var angle = (2*3.14159)/rows.length; //define an angle for every skill so we can put them in a pleasing circle
-				var radius = 110;
+				var radius = 385;
 
 				for (x = 0; x < rows.length; x++)
 				{
 					var nx = 400+(radius*Math.cos(angle*x)); //set the x position - using 450 as the center because our graph is currently 900 by 900
-					var ny = 400+((1.2*radius)*Math.sin(angle*x)); //set the y position
+					var ny = 400+((1*radius)*Math.sin(angle*x)); //set the y position
 					var node = {name: rows[x].skill_name, skill: true, group: skillsGroup, x: nx, y: ny, fixed: true, angle: (angle*x)};
 					smap[rows[x].id] = ret.nodes.length;
 					ret.nodes.push(node);
