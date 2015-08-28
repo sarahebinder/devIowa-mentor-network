@@ -1,6 +1,23 @@
 var db = require('../db');
 var fs = require('fs');
 
+/**
+ * Admin info from flat JSON
+ **/
+var userData; //create a login to access the data entry/admin area
+try
+{
+  userData = JSON.parse(fs.readFileSync('./data/admins.json'));
+}
+catch (e)
+{
+  console.log('No admin configuration found, logins will not be possible!');
+  userData = {};
+}
+
+/**
+ * Define our export for this controller
+ **/
 module.exports = function (app) {
 	//admin login page 
 	app.get('/admin', function(req, res){
@@ -15,21 +32,18 @@ module.exports = function (app) {
 		});
 	});
 
-	var userData; //create a login to access the data entry/admin area
-	  userData = JSON.parse(fs.readFileSync('./data/admins.json'));
+  app.get('/login', function (req, res) {
+    res.render('login', {});
+  });
 
-	  app.get('/login', function (req, res) {
-	    res.render('login', {});
-	  });
-
-	  app.post('/login', function (req, res) {
-	   if(req.body.username==userData.admins.username && req.body.password==userData.admins.password)
-	    {
-	      req.sessionsCookie.loggedIn = true;
-	      res.redirect('/admin');
-	    } else 
-	      res.redirect('/login');
-	  });
+  app.post('/login', function (req, res) {
+   if(req.body.username==userData.admins.username && req.body.password==userData.admins.password)
+    {
+      req.sessionsCookie.loggedIn = true;
+      res.redirect('/admin');
+    } else 
+      res.redirect('/login');
+  });
 
 	app.post('/admin', function(req, res){
 		if(!req.sessionsCookie.loggedIn){

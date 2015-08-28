@@ -5,10 +5,9 @@ var bodyParser = require('body-parser');
 var cs = require('client-sessions');
 var express = require('express');
 var fs = require('fs');
-var db = require('./db');
-var home = require('./controllers/home');
-var userDisplay = require('./controllers/usersPage'); //this is the one that talks to the database
-var dataController = require('./controllers/data');
+var home = require('./Controllers/home');
+var userDisplay = require('./Controllers/usersPage'); //this is the one that talks to the database
+var dataController = require('./Controllers/data');
 
 //starts the node app
 var app = express();
