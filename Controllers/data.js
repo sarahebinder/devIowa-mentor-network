@@ -1,24 +1,24 @@
-var db = require('../db');
 var fs = require('fs');
-
-/**
- * Admin info from flat JSON
- **/
-var userData; //create a login to access the data entry/admin area
-try
-{
-  userData = JSON.parse(fs.readFileSync('./data/admins.json'));
-}
-catch (e)
-{
-  console.log('No admin configuration found, logins will not be possible!');
-  userData = {};
-}
 
 /**
  * Define our export for this controller
  **/
 module.exports = function (app) {
+  var db = app.locals.db;
+  /**
+   * Admin info from flat JSON
+   **/
+  var userData; //create a login to access the data entry/admin area
+  try
+  {
+    userData = JSON.parse(fs.readFileSync(app.locals.config.data_dir + 'admins.json'));
+  }
+  catch (e)
+  {
+    console.log('No admin configuration found, logins will not be possible!');
+    userData = {};
+  }
+
 	//admin login page 
 	app.get('/admin', function(req, res){
 		if(!req.sessionsCookie.loggedIn){

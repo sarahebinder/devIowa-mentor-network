@@ -9,8 +9,13 @@ var home = require('./Controllers/home');
 var userDisplay = require('./Controllers/usersPage'); //this is the one that talks to the database
 var dataController = require('./Controllers/data');
 
-//starts the node app
+var config = require('./config');
+var db = require('./db')(config);
+
+// Setup the Express Server
 var app = express();
+app.locals.db = db;
+app.locals.config = config;
 
 // Adding Swig as a Templating Engine
 app.engine('swig', swig.renderFile);
@@ -36,5 +41,5 @@ dataController(app);
 
 app.use(express.static('public'));
 
-app.listen(3000);
-console.log('server started up, listening on port 3000')
+app.listen(config.port, config.ip);
+console.log(config.name + ' started up, listening on port ' + config.port)
