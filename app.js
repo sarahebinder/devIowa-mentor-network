@@ -42,4 +42,6 @@ dataController(app);
 app.use(express.static('public'));
 
 app.listen(config.port, config.ip);
-console.log(config.name + ' started up, listening on port ' + config.port)
+console.log(config.name + ' started up [ip:' + config.ip + ', port:' + config.port + 
+  ', data_dir: "' + config.data_dir + '"]');
+
